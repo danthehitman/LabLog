@@ -1,9 +1,0 @@
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\bin\Debug\netcoreapp1.1\LabLogWeb.deps.json
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\bin\Debug\netcoreapp1.1\LabLogWeb.runtimeconfig.json
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\bin\Debug\netcoreapp1.1\LabLogWeb.runtimeconfig.dev.json
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\bin\Debug\netcoreapp1.1\LabLogWeb.dll
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\bin\Debug\netcoreapp1.1\LabLogWeb.pdb
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\obj\Debug\netcoreapp1.1\LabLogWeb.csprojResolveAssemblyReference.cache
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\obj\Debug\netcoreapp1.1\LabLogWeb.AssemblyInfo.cs
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\obj\Debug\netcoreapp1.1\LabLogWeb.dll
-C:\Dan\Projects\LabLog\LabLog\LabLogWeb\obj\Debug\netcoreapp1.1\LabLogWeb.pdb

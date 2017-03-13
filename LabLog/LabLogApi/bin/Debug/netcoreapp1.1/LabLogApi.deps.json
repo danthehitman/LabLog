@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "c39c655089a9b76995f669e549be0d28a659d256"
+    "signature": "605fbea4928ef8ac9f584ecd64f6512a1d55ef0c"
   },
   "compilationOptions": {
     "defines": [
@@ -23,18 +23,24 @@
     ".NETCoreApp,Version=v1.1": {
       "lablogapi/1.0.0": {
         "dependencies": {
+          "Google.Apis.Auth": "1.21.0",
+          "Google.Apis.Oauth2.v2": "1.21.0.672",
+          "Google.Apis.Plus.v1": "1.21.0.790",
           "Marten": "1.4.1",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.1",
+          "Microsoft.AspNetCore.Authentication.Google": "1.1.1",
           "Microsoft.AspNetCore.Mvc": "1.1.2",
           "Microsoft.AspNetCore.StaticFiles": "1.1.1",
           "Microsoft.EntityFrameworkCore.Design": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.1",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.1.1",
           "Microsoft.Extensions.Logging.Debug": "1.1.1",
           "Microsoft.NETCore.App": "1.1.1",
           "Microsoft.VisualStudio.Web.BrowserLink": "1.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "1.1.0"
         },
         "runtime": {
           "LabLogApi.dll": {}
@@ -69,6 +75,110 @@
         },
         "compile": {
           "lib/netstandard1.3/Baseline.dll": {}
+        }
+      },
+      "google.apis/1.21.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.21.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.Compression": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Http": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Google.Apis.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Google.Apis.dll": {}
+        }
+      },
+      "google.apis.auth/1.21.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.21.0",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Collections": "4.3.0",
+          "System.Console": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Http": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.Requests": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard1.3/Google.Apis.Auth.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard1.3/Google.Apis.Auth.dll": {}
+        }
+      },
+      "google.apis.core/1.21.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Http": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Google.Apis.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Google.Apis.Core.dll": {}
+        }
+      },
+      "google.apis.oauth2.v2/1.21.0.672": {
+        "dependencies": {
+          "Google.Apis": "1.21.0",
+          "Google.Apis.Auth": "1.21.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Google.Apis.Oauth2.v2.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Google.Apis.Oauth2.v2.dll": {}
+        }
+      },
+      "google.apis.plus.v1/1.21.0.790": {
+        "dependencies": {
+          "Google.Apis": "1.21.0",
+          "Google.Apis.Auth": "1.21.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Google.Apis.Plus.v1.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Google.Apis.Plus.v1.dll": {}
         }
       },
       "marten/1.4.1": {
@@ -167,6 +277,49 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.Antiforgery.dll": {}
+        }
+      },
+      "microsoft.aspnetcore.authentication/1.1.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.DataProtection": "1.1.1",
+          "Microsoft.AspNetCore.Http": "1.1.1",
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
+          "Microsoft.Extensions.Options": "1.1.1",
+          "Microsoft.Extensions.WebEncoders": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.dll": {}
+        }
+      },
+      "microsoft.aspnetcore.authentication.google/1.1.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.OAuth": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        }
+      },
+      "microsoft.aspnetcore.authentication.oauth/1.1.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication": "1.1.1",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.OAuth.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Authentication.OAuth.dll": {}
         }
       },
       "microsoft.aspnetcore.authorization/1.1.1": {
@@ -1037,6 +1190,18 @@
           "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.dll": {}
         }
       },
+      "microsoft.extensions.configuration.usersecrets/1.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Json": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.5/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
+        }
+      },
       "microsoft.extensions.dependencyinjection/1.1.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
@@ -1508,6 +1673,21 @@
         },
         "compile": {
           "lib/netstandard1.3/Npgsql.dll": {}
+        }
+      },
+      "npgsql.entityframeworkcore.postgresql/1.1.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.Extensions.DependencyInjection": "1.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+          "Npgsql": "3.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
       "nuget.frameworks/3.5.0": {
@@ -3600,6 +3780,41 @@
       "path": "baseline/1.2.0",
       "hashPath": "baseline.1.2.0.nupkg.sha512"
     },
+    "google.apis/1.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZcWP3H65G7kW2URxDlGXcpeQNMQEFEp1/LPKlKlvgQKPAJeqWE7KCgqVW+0P06c791rbiXUAjFS/6q6Gzg+2Mg==",
+      "path": "google.apis/1.21.0",
+      "hashPath": "google.apis.1.21.0.nupkg.sha512"
+    },
+    "google.apis.auth/1.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JnSqfIBggkUKh4nrLzqy72v/eJb82alVXwneT6iDtSlf2UAk5JvtMJH/WgoeZIicn0fWXul2BNbpv7Y9y8ya7Q==",
+      "path": "google.apis.auth/1.21.0",
+      "hashPath": "google.apis.auth.1.21.0.nupkg.sha512"
+    },
+    "google.apis.core/1.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9kQDOyLcwLv0sHIWdjilyW/9jufRmxRhNReMBO7WQ9XfLy9PfONjVNizadoqELV/7rRPtbhSVGjr/KWV8I1QMw==",
+      "path": "google.apis.core/1.21.0",
+      "hashPath": "google.apis.core.1.21.0.nupkg.sha512"
+    },
+    "google.apis.oauth2.v2/1.21.0.672": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OcX996S3pqg2yekMVbREXmtqmkJblhZ76Xxszf+Na2dQ5NM4MOsmZevJ4lmY3piAoeUXTfFyn383wCIh/ijj6A==",
+      "path": "google.apis.oauth2.v2/1.21.0.672",
+      "hashPath": "google.apis.oauth2.v2.1.21.0.672.nupkg.sha512"
+    },
+    "google.apis.plus.v1/1.21.0.790": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7Il/wNOC2z1HppaP9P0mTe+L60knwfaX9LCRw853N3CQeU3w8r3A5Z0oc1Tu3OkBigd9egZXg7MOeNdC3XKV6Q==",
+      "path": "google.apis.plus.v1/1.21.0.790",
+      "hashPath": "google.apis.plus.v1.1.21.0.790.nupkg.sha512"
+    },
     "marten/1.4.1": {
       "type": "package",
       "serviceable": true,
@@ -3634,6 +3849,27 @@
       "sha512": "sha512-dPXE9f6UV8DAUn/SxDCI3x0Lw5gjZ093ZDgWUZOZcUmv7k52V+X7VQjyO4iGPiFXj71vTwGjMETR4qw/SDVm5w==",
       "path": "microsoft.aspnetcore.antiforgery/1.1.1",
       "hashPath": "microsoft.aspnetcore.antiforgery.1.1.1.nupkg.sha512"
+    },
+    "microsoft.aspnetcore.authentication/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cODSsUSurBIVRtNbxyj+/SVNT/QdZa4ZWb9a+p9FCjsOICKai4XIqd7v4z6SDSh4gD2rupglf16jpP5qvnbLiQ==",
+      "path": "microsoft.aspnetcore.authentication/1.1.1",
+      "hashPath": "microsoft.aspnetcore.authentication.1.1.1.nupkg.sha512"
+    },
+    "microsoft.aspnetcore.authentication.google/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5bovr3Z/CzLgYqfpUszSA0+SuQ4jiybyE/uaNc69ZThFhzWu1lP0TEkd4ZlbPyq+Qj0fHDOQ/kcEHuts0dYtoQ==",
+      "path": "microsoft.aspnetcore.authentication.google/1.1.1",
+      "hashPath": "microsoft.aspnetcore.authentication.google.1.1.1.nupkg.sha512"
+    },
+    "microsoft.aspnetcore.authentication.oauth/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cS3sVKacQqNO+ZSOa1kVtJy34XCVk5vF6kE7u0Cd1AR/VC7TAjpGeHlBSNzVBfrj/W71ly/MWU4gldQZ3XzsKw==",
+      "path": "microsoft.aspnetcore.authentication.oauth/1.1.1",
+      "hashPath": "microsoft.aspnetcore.authentication.oauth.1.1.1.nupkg.sha512"
     },
     "microsoft.aspnetcore.authorization/1.1.1": {
       "type": "package",
@@ -4041,6 +4277,13 @@
       "path": "microsoft.extensions.configuration.json/1.1.1",
       "hashPath": "microsoft.extensions.configuration.json.1.1.1.nupkg.sha512"
     },
+    "microsoft.extensions.configuration.usersecrets/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mlzhf4rYd8mAa1hEMW0qCuptu3nLmIrCUi0+XtS4FMb0fJCP4f+FPmDjnIXqfPQuYVlrchqXZnpfZlDdAJjzBQ==",
+      "path": "microsoft.extensions.configuration.usersecrets/1.1.1",
+      "hashPath": "microsoft.extensions.configuration.usersecrets.1.1.1.nupkg.sha512"
+    },
     "microsoft.extensions.dependencyinjection/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -4264,6 +4507,13 @@
       "sha512": "sha512-1qJ336r9dEQnby63hgruoV0hpFj+tUv0MVQ17Yz8tvz4hPJx1+ZKh+qLN8ghDAAcBB1R3ucUzA8QgSUc3Cc4Qg==",
       "path": "npgsql/3.2.0",
       "hashPath": "npgsql.3.2.0.nupkg.sha512"
+    },
+    "npgsql.entityframeworkcore.postgresql/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7J4oVuALr8voMhbCkQUODu6VG9DR4u3Io4oIwZK1VocNlXN8RHPFhS1nOQOb/TAe+Eav/GqnmEiSZ0uhe2wphQ==",
+      "path": "npgsql.entityframeworkcore.postgresql/1.1.0",
+      "hashPath": "npgsql.entityframeworkcore.postgresql.1.1.0.nupkg.sha512"
     },
     "nuget.frameworks/3.5.0": {
       "type": "package",

@@ -15,7 +15,8 @@ namespace LabLogApi
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                //.UseIISIntegration()
+                .UseUrls("http://dev.lablog.com:4724")
+                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
 

@@ -1,0 +1,14 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "jQuery": "3.1.1",
+    "knockout": "v3.4.2",
+    "requirejs": "2.3.3",
+    "Durandal": "durandal#2.2.0",
+    "bootstrap": "v4.0.0-alpha.6",
+    "font-awesome": "Font-Awesome#v4.7.0",
+    "jquery-ui": "jquery.ui#1.12.1",
+    "js-cookie": "v2.1.3"
+  }
+}
