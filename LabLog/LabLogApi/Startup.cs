@@ -57,7 +57,7 @@ namespace LabLogApi
 
             // Marten document store
             services.AddScoped<IDocumentStore>(provider =>
-                DocumentStore.For("Server=127.0.0.1;Port=5433;Database=LabLog;User Id=postgres;Password=admin;"));
+                DocumentStore.For($"Server=127.0.0.1;Port=5433;Database=LabLog;User Id={Configuration["Authentication:Postgres:User"]};Password={Configuration["Authentication:Postgres:Password"]};"));
             services.AddScoped<ISessionService>(provider =>
                 new SessionService(Configuration["Authentication:Google:ClientID"], Configuration["Authentication:Google:ClientSecret"]));
         }

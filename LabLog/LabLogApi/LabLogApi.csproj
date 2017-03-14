@@ -7,6 +7,9 @@
   <PropertyGroup>  
 	<UserSecretsId>E0CC902F-D852-40AD-981A-DB03E0778864</UserSecretsId>
   </PropertyGroup>
+  <PropertyGroup>
+	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
 
   <ItemGroup>
     <Content Include="wwwroot\apilogin.html" />
