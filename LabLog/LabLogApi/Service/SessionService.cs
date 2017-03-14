@@ -22,15 +22,20 @@ namespace LabLogApi.Service
             _documentStore = documentStore;
         }
 
-        public static ClientSecrets secrets = new ClientSecrets()
-        {
-            ClientId = "552307546414-h58bp8klvjhlqua4u7t1d0jjl3tjr7i5.apps.googleusercontent.com",
-            ClientSecret = "yCtjpJExaKWjesuTAcEbOjID"
-        };
+        public static ClientSecrets secrets = null;
 
         // Uncomment to retrieve email.
         static public string[] SCOPES = { PlusService.Scope.PlusLogin, PlusService.Scope.UserinfoEmail };
-        
+
+
+        public SessionService(string clientId, string clientSecret)
+        {
+            secrets = new ClientSecrets()
+            {
+                ClientId = clientId,
+                ClientSecret = clientSecret
+            };
+        }
         public async Task<string> GetSessionFromGoogleCode(string code)
         {
             string sessionToken = null;

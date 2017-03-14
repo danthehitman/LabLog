@@ -7,8 +7,8 @@
         router: router,
         activate: function () {
             router.map([
-                { route: 'home', title: 'Home', moduleId: 'view/home', nav: true },
-                { route: '', title: ' Blog', moduleId: 'view/blog', nav: true }
+                { route: '', title: 'Home', moduleId: 'view/home', nav: true },
+                { route: 'blog', title: ' Blog', moduleId: 'view/blog', nav: true }
             ]).buildNavigationModel();
 
             return router.activate({ pushState: true });

@@ -29,7 +29,7 @@ namespace LabLogApi
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets("LabLogSecrets");
+                builder.AddUserSecrets();
             }
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -58,7 +58,8 @@ namespace LabLogApi
             // Marten document store
             services.AddScoped<IDocumentStore>(provider =>
                 DocumentStore.For("Server=127.0.0.1;Port=5433;Database=LabLog;User Id=postgres;Password=admin;"));
-            services.AddScoped<ISessionService, SessionService>();
+            services.AddScoped<ISessionService>(provider =>
+                new SessionService(Configuration["Authentication:Google:ClientID"], Configuration["Authentication:Google:ClientSecret"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
