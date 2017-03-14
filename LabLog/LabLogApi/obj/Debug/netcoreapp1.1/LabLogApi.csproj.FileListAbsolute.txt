@@ -2,9 +2,8 @@ C:\Dan\Projects\LabLog\LabLog\LabLogApi\bin\Debug\netcoreapp1.1\LabLogApi.deps.j
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\bin\Debug\netcoreapp1.1\LabLogApi.runtimeconfig.json
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\bin\Debug\netcoreapp1.1\LabLogApi.runtimeconfig.dev.json
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\bin\Debug\netcoreapp1.1\LabLogApi.dll
-C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.AssemblyInfo.cs
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\bin\Debug\netcoreapp1.1\LabLogApi.pdb
+C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.AssemblyInfo.cs
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.dll
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.pdb
-C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
-C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.csprojResolveAssemblyReference.cache

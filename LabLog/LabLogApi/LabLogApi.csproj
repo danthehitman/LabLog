@@ -3,12 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
-  </PropertyGroup>
-  <PropertyGroup>  
 	<UserSecretsId>E0CC902F-D852-40AD-981A-DB03E0778864</UserSecretsId>
-  </PropertyGroup>
-  <PropertyGroup>
-	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
