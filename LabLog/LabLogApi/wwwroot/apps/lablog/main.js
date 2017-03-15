@@ -1,9 +1,9 @@
 ﻿requirejs.config({
     paths: {
         text:'/lib/requirejs-text/text',
-        durandal: '/lib/durandal/js',
-        plugins: '/lib/durandal/js/plugins',
-        transitions: '/lib/durandal/js/transitions',
+        durandal: '/lib/Durandal/js',
+        plugins: '/lib/Durandal/js/plugins',
+        transitions: '/lib/Durandal/js/transitions',
         knockout: '/lib/knockout/dist/knockout',
         jquery: '/lib/jquery/dist/jquery',
         jqueryUi: '/lib/jquery-ui/ui',

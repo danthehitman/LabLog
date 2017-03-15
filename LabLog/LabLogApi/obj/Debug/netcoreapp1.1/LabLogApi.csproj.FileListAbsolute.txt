@@ -7,3 +7,4 @@ C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\UserSecretsAssem
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.AssemblyInfo.cs
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.dll
 C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.pdb
+C:\Dan\Projects\LabLog\LabLog\LabLogApi\obj\Debug\netcoreapp1.1\LabLogApi.csprojResolveAssemblyReference.cache
