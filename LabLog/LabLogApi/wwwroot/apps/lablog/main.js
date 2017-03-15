@@ -5,7 +5,7 @@
         plugins: '/lib/Durandal/js/plugins',
         transitions: '/lib/Durandal/js/transitions',
         knockout: '/lib/knockout/dist/knockout',
-        jquery: '/lib/jquery/dist/jQuery',
+        jquery: '/lib/jQuery/dist/jquery',
         jqueryUi: '/lib/jquery-ui/ui',
         view: 'view',
         model: 'model',
