@@ -55,9 +55,14 @@ namespace LabLogApi
                     options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
                 });
 
+            var connectionString = Configuration["ConnectionString"];
+            if (Configuration["Authentication:Postgres:Password"] != null)
+            {
+                connectionString = $"Server=127.0.0.1;Port={Configuration["Authentication:Postgres:Port"]};Database={Configuration["Authentication:Postgres:Database"]};User Id={Configuration["Authentication:Postgres:User"]};Password={Configuration["Authentication:Postgres:Password"]};";
+            }
             // Marten document store
             services.AddScoped<IDocumentStore>(provider =>
-                DocumentStore.For($"Server=127.0.0.1;Port={Configuration["Authentication:Postgres:Port"]};Database={Configuration["Authentication:Postgres:Database"]};User Id={Configuration["Authentication:Postgres:User"]};Password={Configuration["Authentication:Postgres:Password"]};"));
+                DocumentStore.For(connectionString));
             services.AddScoped<ISessionService>(provider =>
                 new SessionService(Configuration["Authentication:Google:ClientID"], Configuration["Authentication:Google:ClientSecret"]));
         }
