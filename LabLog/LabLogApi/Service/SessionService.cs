@@ -17,19 +17,16 @@ namespace LabLogApi.Service
     {
         private readonly IDocumentStore _documentStore;
 
-        public SessionService(IDocumentStore documentStore)
-        {
-            _documentStore = documentStore;
-        }
-
         public static ClientSecrets secrets = null;
 
         // Uncomment to retrieve email.
         static public string[] SCOPES = { PlusService.Scope.PlusLogin, PlusService.Scope.UserinfoEmail };
 
 
-        public SessionService(string clientId, string clientSecret)
+        public SessionService(string clientId, string clientSecret, IDocumentStore documentStore)
         {
+            _documentStore = documentStore;
+
             secrets = new ClientSecrets()
             {
                 ClientId = clientId,

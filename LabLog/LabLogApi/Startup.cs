@@ -63,8 +63,18 @@ namespace LabLogApi
             // Marten document store
             services.AddScoped<IDocumentStore>(provider =>
                 DocumentStore.For(connectionString));
+
+            var clientId = Configuration["GoogleClientId"];
+            var clientSecret = Configuration["GoogleClientSecret"];
+
+            if(Configuration["Authentication:Google:ClientID"] != null)
+            {
+                clientId = Configuration["Authentication:Google:ClientID"];
+                clientSecret = Configuration["Authentication:Google:ClientSecret"];
+            }
+
             services.AddScoped<ISessionService>(provider =>
-                new SessionService(Configuration["Authentication:Google:ClientID"], Configuration["Authentication:Google:ClientSecret"]));
+                new SessionService(clientId, clientSecret, DocumentStore.For(connectionString)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
