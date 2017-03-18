@@ -48,7 +48,7 @@ namespace LabLogApi.Controllers
         {
             var token = await _sessionService.GetSessionFromGoogleCode(body.Code);
             if (token == null)
-                throw new UnauthorzedException("Unauthorized");
+                throw new UnauthorizedException("Unauthorized");
             else
                 return new SessionDto() { Token = token };
         }

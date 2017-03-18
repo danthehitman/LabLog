@@ -7,4 +7,14 @@
             <button data-bind="click: signOutClick">Log Out</button>
         </fieldset>
     </form>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" id="files"
+                   name="files" multiple />
+            <input type="button"
+                   id="upload"
+                   value="Upload Selected Files"
+                   data-bind="click: uploadClick" />
+        </form>
+    </div>
 </section>

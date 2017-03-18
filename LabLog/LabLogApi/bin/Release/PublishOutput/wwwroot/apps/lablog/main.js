@@ -11,13 +11,13 @@
         model: 'model',
         service: 'service',
         sessionService: "/apps/lablog/service/sessionservice",
+        llapi: "/apps/lablog/service/lablogapi",
         cookies: '/lib/js-cookie/src/js.cookie'
     },
     map: {
         "*": {
             ko: "knockout",
             utils: "/apps/common/utils.js",
-            llapi: "/apps/lablog/service/lablogapi.js",
             appState: "/apps/lablog/model/appstate.js",
         }
     },

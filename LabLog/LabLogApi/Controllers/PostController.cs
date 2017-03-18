@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LabLogApi.Exceptions;
 using LabLogApi.Model;
 using Marten;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,6 +43,7 @@ namespace LabLogApi.Controllers
         }
         
         [HttpPost]
+        [Authorize(Policy = "AuthToken")]
         public Post Post([FromBody]Post post)
         {
             using (var session = _documentStore.LightweightSession())
@@ -54,6 +56,7 @@ namespace LabLogApi.Controllers
         }
         
         [HttpPut("{id}")]
+        [Authorize(Policy = "AuthToken")]
         public Post Put(Guid id, [FromBody]Post post)
         {
             using (var session = _documentStore.LightweightSession())
@@ -78,6 +81,5 @@ namespace LabLogApi.Controllers
                 session.SaveChanges();
             }
         }
-
     }
 }

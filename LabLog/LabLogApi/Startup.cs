@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LabLogApi.Auth;
 using LabLogApi.Service;
 using Marten;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -55,11 +57,19 @@ namespace LabLogApi
                     options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
                 });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AuthToken",
+                                  policy => policy.Requirements.Add(new AuthTokenRequirement()));
+            });
+            services.AddSingleton<IAuthorizationHandler, AuthTokenHandler>();
+
             var connectionString = Configuration["ConnectionString"];
             if (Configuration["Authentication:Postgres:Password"] != null)
             {
                 connectionString = $"Server=127.0.0.1;Port={Configuration["Authentication:Postgres:Port"]};Database={Configuration["Authentication:Postgres:Database"]};User Id={Configuration["Authentication:Postgres:User"]};Password={Configuration["Authentication:Postgres:Password"]};";
             }
+
             // Marten document store
             services.AddScoped<IDocumentStore>(provider =>
                 DocumentStore.For(connectionString));
@@ -88,6 +98,7 @@ namespace LabLogApi
 
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             //app.UseMiddleware<IgnoreRouteMiddleware>();
+
             app.UseMvc();
         }
     }

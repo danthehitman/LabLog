@@ -13,7 +13,10 @@
 
             self.onCheckActiveSessionSuccess = function (result) {
                 if (result != null && result.token == appState.getSessionCookie())
+                {
                     appState.activeSession = true;
+                    console.log(result.token);
+                }
                 else {
                     appState.activeSession = false;
                     appState.deleteSessionCookie();

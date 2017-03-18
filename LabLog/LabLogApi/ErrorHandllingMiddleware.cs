@@ -33,7 +33,7 @@ namespace LabLogApi
             var code = HttpStatusCode.InternalServerError; // 500 if unexpected
 
             if (exception is NotFoundException) code = HttpStatusCode.NotFound;
-            else if (exception is UnauthorzedException) code = HttpStatusCode.Unauthorized;
+            else if (exception is UnauthorizedException) code = HttpStatusCode.Unauthorized;
             else if (exception is BadRequestException) code = HttpStatusCode.BadRequest;
 
             var result = JsonConvert.SerializeObject(new { error = exception.Message });

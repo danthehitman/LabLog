@@ -33,6 +33,7 @@ namespace LabLogApi.Service
                 ClientSecret = clientSecret
             };
         }
+
         public async Task<string> GetSessionFromGoogleCode(string code)
         {
             string sessionToken = null;

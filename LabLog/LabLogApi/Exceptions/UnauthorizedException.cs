@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace LabLogApi.Exceptions
 {
-    public class UnauthorzedException : Exception
+    public class UnauthorizedException : Exception
     {
-        public UnauthorzedException(string message) : base(message)
+        public UnauthorizedException(string message) : base(message)
         {
         }
     }

@@ -1,6 +1,6 @@
 ﻿define(['utils', 'appState'],
     function (utils, appState) {
-        var singleton = function ilapi() {
+        var singleton = function llapi() {
             var self = this;
             
             self.getPosts = function (successCallback, errorCallback) {
@@ -19,6 +19,19 @@
                     type: 'GET',
                     url: '/api/sessions/' + token,
                     async: true,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
+
+            self.uploadFiles = function (data, successCallback, errorCallback) {
+                $.ajax({
+                    headers: { "Authorization": appState.sessionToken },
+                    type: "POST",
+                    url: "/api/images",
+                    contentType: false,
+                    processData: false,
+                    data: data,
                     success: successCallback,
                     error: errorCallback
                 });
