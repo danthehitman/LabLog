@@ -48,7 +48,9 @@ namespace LabLogApi.Controllers
         {
             using (var session = _documentStore.LightweightSession())
             {
-                post.ModifiedDates = new Model.Post.Dates() { CreatedDate = DateTime.UtcNow, LastEditedDate = DateTime.UtcNow };
+                post.CreatedDate = DateTime.UtcNow;
+                post.LastEditedDate = DateTime.UtcNow;
+                post.PublishedDate = DateTime.UtcNow;
                 session.Store(post);
                 session.SaveChanges();
                 return post;
@@ -66,7 +68,7 @@ namespace LabLogApi.Controllers
                     throw new NotFoundException();
                 existingPost.Title = post.Title;
                 existingPost.Body = post.Body;
-                existingPost.ModifiedDates.LastEditedDate = DateTime.UtcNow;
+                existingPost.LastEditedDate = DateTime.UtcNow;
                 session.SaveChanges();
                 return existingPost;
             }

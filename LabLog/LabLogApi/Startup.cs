@@ -72,7 +72,10 @@ namespace LabLogApi
 
             // Marten document store
             services.AddScoped<IDocumentStore>(provider =>
-                DocumentStore.For(connectionString));
+                DocumentStore.For(_ => {
+                    _.Connection(connectionString);
+                    _.AutoCreateSchemaObjects = AutoCreate.CreateOrUpdate;
+                }));
 
             var clientId = Configuration["GoogleClientId"];
             var clientSecret = Configuration["GoogleClientSecret"];
