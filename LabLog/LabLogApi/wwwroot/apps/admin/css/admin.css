@@ -4,14 +4,21 @@ body {
     font-family: Arial;
 }
 
-#llBlogMain{
+#llAdminMain{
     width: 800px;
+}
+
+#llAdminHeaderDiv 
+{
+    margin-bottom:10px;
 }
 
 .siteContainer {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    width: 800px;
+    height: 100%
 }
 
 .llPostContainer 

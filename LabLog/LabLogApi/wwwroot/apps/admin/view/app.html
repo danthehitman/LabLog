@@ -1,12 +1,14 @@
-﻿<section>
-    <div>
-        <span data-bind="click:function(){setNavigationTab(navState.tabs.main);}">main</span>
-        <span data-bind="click:function(){setNavigationTab(navState.tabs.fileUpload);}">file</span>
-        <span data-bind="click:function(){setNavigationTab(navState.tabs.postEditor);}">post</span>
-    </div>
-    <div>
-        <button data-bind="click: signInClick">Log In</button>
-        <button data-bind="click: signOutClick">Log Out</button>
+﻿<div id="llAdminMain">
+    <div id="llAdminHeaderDiv">
+        <div>
+            <span data-bind="click:function(){setNavigationTab(navState.tabs.main);}">main</span>
+            <span data-bind="click:function(){setNavigationTab(navState.tabs.fileUpload);}">file</span>
+            <span data-bind="click:function(){setNavigationTab(navState.tabs.postEditor);}">post</span>
+        </div>
+        <div>
+            <button data-bind="click: signInClick">Log In</button>
+            <button data-bind="click: signOutClick">Log Out</button>
+        </div>
     </div>
     <div id="llAdminMain" data-bind="visible: navState.activeTab() == navState.tabs.main">
         <div data-bind="compose: '/apps/admin/view/mainview.html'"></div>
@@ -17,4 +19,4 @@
     <div id="llAdminPostEdit" data-bind="visible: navState.activeTab() == navState.tabs.postEditor">
         <div data-bind="compose: '/apps/admin/view/posteditview.html'"></div>
     </div>
-</section>
+</div>

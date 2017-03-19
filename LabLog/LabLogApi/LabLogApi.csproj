@@ -15,6 +15,7 @@
     <Content Include="wwwroot\apps\admin\css\admin.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\apps\admin\css\postedit.css" />
     <Content Include="wwwroot\apps\admin\main.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -30,6 +31,7 @@
     </Content>
     <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
+    <Content Include="wwwroot\apps\admin\viewmodel\posteditviewmodel.js" />
     <Content Include="wwwroot\apps\admin\view\adminiew.html" />
     <Content Include="wwwroot\apps\admin\view\adminView.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

@@ -1,0 +1,41 @@
+﻿
+.llAdminPostEditLabelSpan2 {
+    position: relative;
+    width: 12.5%
+}
+
+.llAdminPostEditInputSpan2 {
+    position: relative;
+    width: 37.5%
+}
+
+.llAdminPostEditLabelSpan1 {
+    left: 0px;
+    position: absolute;
+    width: 25%;
+}
+
+.llAdminPostEditLongTextSpan 
+{
+    right: 0px;
+    position: absolute;
+    width: 75%;
+}
+
+.llAdminPostEditShortTextSpan {
+    right: 0px;
+    position: absolute;
+    width: 700px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.llAdminPostEditTextInput
+{
+    right:
+}
+
+.llAdminPostEditFormTextInputContainer
+{
+    height:25px;
+}

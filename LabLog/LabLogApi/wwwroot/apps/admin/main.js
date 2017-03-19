@@ -18,7 +18,8 @@
             appState: "/apps/common/model/appstate.js",
             navState: "/apps/admin/model/navigationstate.js",
             
-            fileUploadViewModel: "/apps/admin/viewmodel/fileuploadviewmodel.js"
+            fileUploadViewModel: "/apps/admin/viewmodel/fileuploadviewmodel.js",
+            postEditViewModel: "/apps/admin/viewmodel/postediviewmodel.js"
         }
     },
     shim: {
