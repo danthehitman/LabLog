@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\apps\admin\service\**" />
+    <Content Remove="wwwroot\apps\admin\service\**" />
+    <EmbeddedResource Remove="wwwroot\apps\admin\service\**" />
+    <None Remove="wwwroot\apps\admin\service\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\admin.html" />
     <Content Include="wwwroot\admin.min.html" />
-    <Content Include="wwwroot\apps\admin\app.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\apps\admin\css\admin.css">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -19,46 +23,17 @@
     <Content Include="wwwroot\apps\admin\main.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="wwwroot\apps\admin\model\appstate.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\apps\admin\model\navigationstate.js" />
-    <Content Include="wwwroot\apps\admin\service\lablogapi.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\apps\admin\service\sessionservice.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\posteditviewmodel.js" />
-    <Content Include="wwwroot\apps\admin\view\adminiew.html" />
-    <Content Include="wwwroot\apps\admin\view\adminView.html">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\apps\admin\view\admin.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\apps\admin\view\adminView.js" />
-    <Content Include="wwwroot\apps\admin\view\adminview1.html" />
-    <Content Include="wwwroot\apps\admin\view\adminviewmodel.js" />
     <Content Include="wwwroot\apps\admin\view\app.html" />
-    <Content Include="wwwroot\apps\admin\view\blog.html">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\apps\admin\view\blog.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\apps\admin\view\fileuploadview.html" />
     <Content Include="wwwroot\apps\admin\view\mainview.html" />
     <Content Include="wwwroot\apps\admin\view\posteditview.html" />
-    <Content Include="wwwroot\apps\admin\view\postedview.html" />
-    <Content Include="wwwroot\apps\common\lablogapi.js" />
     <Content Include="wwwroot\apps\common\model\appstate.js" />
-    <Content Include="wwwroot\apps\common\service\appstate.js" />
     <Content Include="wwwroot\apps\common\service\lablogapi.js" />
     <Content Include="wwwroot\apps\common\service\sessionservice.js" />
-    <Content Include="wwwroot\apps\common\sessionservice.js" />
     <Content Include="wwwroot\apps\lablog\view\admin.html" />
     <Content Include="wwwroot\apps\lablog\view\admin.js" />
   </ItemGroup>
