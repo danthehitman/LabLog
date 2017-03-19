@@ -16,7 +16,7 @@
                     body: self.body(),
                     tags: self.tags(),
                     byLine: self.byLine(),
-                    publisedhDate: self.publishedDate()
+                    publishedDate: self.publishedDate()
                 };
             };
 

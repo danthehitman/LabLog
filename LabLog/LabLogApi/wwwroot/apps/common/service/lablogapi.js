@@ -16,12 +16,12 @@
 
             self.createPost = function (data, successCallback, errorCallback) {
                 $.ajax({
-                    headers: { "Authorization": appState.sessionToken },
+                    headers: { "Authorization": appState.sessionToken, "Content-Type": "application/json" },
                     type: "POST",
                     url: "/api/posts",
                     contentType: false,
                     processData: false,
-                    data: data,
+                    data: JSON.stringify(data),
                     success: successCallback,
                     error: errorCallback
                 });
@@ -29,12 +29,12 @@
 
             self.updatePost = function (data, successCallback, errorCallback) {
                 $.ajax({
-                    headers: { "Authorization": appState.sessionToken },
+                    headers: { "Authorization": appState.sessionToken, "Content-Type": "application/json" },
                     type: "PUT",
                     url: "/api/posts/" + data.id,
                     contentType: false,
                     processData: false,
-                    data: data,
+                    data: JSON.stringify(data),
                     success: successCallback,
                     error: errorCallback
                 });
