@@ -1,12 +1,25 @@
 ﻿<div data-bind="with:postEditViewModel">
     <div class="llAdminPostEditFormTextInputContainer">
-        <span class="llAdminPostEditLabelSpan1">Title:</span>
-        <span  class="llAdminPostEditLongTextSpan"><input class="llAdminPostEditTextInput" type="text" /></span>
+        <span class="llAdminPostEditLabelSpan">Title:</span>
+        <span  class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().title" class="llAdminPostEditTextInput" type="text" /></span>
     </div>
     <div class="llAdminPostEditFormTextInputContainer">
-        <span class="llAdminPostEditLabelSpan2">By Line:</span>
-        <span class="llAdminPostEditInputSpan2"><input class="llAdminPostEditTextInput" type="text" /></span>
-        <span class="llAdminPostEditLabelSpan2">Tags:</span>
-        <span class="llAdminPostEditInputSpan2"><input class="llAdminPostEditTextInput" type="text" /></span>
+        <span class="llAdminPostEditLabelSpan">By Line:</span>
+        <span class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().byLine" class="llAdminPostEditTextInput" type="text" /></span>
+    </div>
+    <div class="llAdminPostEditFormTextInputContainer">
+        <span class="llAdminPostEditLabelSpan">Tags:</span>
+        <span class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().tags" class="llAdminPostEditTextInput" type="text" /></span>
+    </div>
+    <div class="llAdminPostEditFormTextInputContainer">
+        <span class="llAdminPostEditLabelSpan">Publish Date:</span>
+        <span class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().publishedDate" class="llAdminPostEditTextInput" type="datetime-local" /></span>
+    </div>
+    <div>
+        <div>Body:</div>
+        <div><textarea id="llAdminPostBodyInput" data-bind="value:postModel().body"/></div>
+    </div>
+    <div>
+        <div><input type="button" data-bind="click:onSubmitPostClicked" value="Save"/></div>
     </div>
 </div>

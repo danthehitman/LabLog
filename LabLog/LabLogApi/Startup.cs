@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LabLogApi.Auth;
+using LabLogApi.Model;
 using LabLogApi.Service;
 using Marten;
 using Microsoft.AspNetCore.Authorization;
@@ -88,6 +89,26 @@ namespace LabLogApi
 
             services.AddScoped<ISessionService>(provider =>
                 new SessionService(clientId, clientSecret, DocumentStore.For(connectionString)));
+
+            var db = DocumentStore.For(_ =>
+            {
+                _.Connection(connectionString);
+                _.AutoCreateSchemaObjects = AutoCreate.CreateOrUpdate;
+            });
+            using (var service = db.LightweightSession())
+            {
+                var adminEmail = "danthehitman@gmail.com";
+                if (! service.Query<User>().Where(u => u.Email == "danthehitman@gmail.com").Any())
+                {
+                    service.Store(new User
+                    {
+                        Email = adminEmail,
+                        FirstName = "Dan",
+                        LastName = "Frank"
+                    });
+                    service.SaveChanges();
+                }
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

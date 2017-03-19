@@ -17,9 +17,10 @@
             utils: "/apps/common/utils.js",
             appState: "/apps/common/model/appstate.js",
             navState: "/apps/admin/model/navigationstate.js",
+            postModel: "/apps/admin/model/postmodel.js",
             
             fileUploadViewModel: "/apps/admin/viewmodel/fileuploadviewmodel.js",
-            postEditViewModel: "/apps/admin/viewmodel/postediviewmodel.js"
+            postEditViewModel: "/apps/admin/viewmodel/posteditviewmodel.js"
         }
     },
     shim: {

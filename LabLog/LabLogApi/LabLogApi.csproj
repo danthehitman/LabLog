@@ -24,6 +24,7 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="wwwroot\apps\admin\model\navigationstate.js" />
+    <Content Include="wwwroot\apps\admin\model\postmodel.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\posteditviewmodel.js" />

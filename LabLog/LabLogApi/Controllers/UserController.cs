@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LabLogApi.Model;
 using Marten;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +30,7 @@ namespace LabLogApi.Controllers
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "Get")]
+        [Authorize(Policy = "AuthToken")]
         public string Get(int id)
         {
             return "value";
@@ -36,6 +38,7 @@ namespace LabLogApi.Controllers
         
         // POST: api/User
         [HttpPost]
+        [Authorize(Policy = "AuthToken")]
         public User Post([FromBody]User user)
         {
             using (var session = _documentStore.LightweightSession())
@@ -48,12 +51,14 @@ namespace LabLogApi.Controllers
         
         // PUT: api/User/5
         [HttpPut("{id}")]
+        [Authorize(Policy = "AuthToken")]
         public void Put(int id, [FromBody]string value)
         {
         }
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
+        [Authorize(Policy = "AuthToken")]
         public void Delete(int id)
         {
         }

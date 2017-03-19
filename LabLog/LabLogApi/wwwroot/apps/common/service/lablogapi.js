@@ -13,6 +13,32 @@
                     error: errorCallback
                 });
             };
+
+            self.createPost = function (data, successCallback, errorCallback) {
+                $.ajax({
+                    headers: { "Authorization": appState.sessionToken },
+                    type: "POST",
+                    url: "/api/posts",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
+
+            self.updatePost = function (data, successCallback, errorCallback) {
+                $.ajax({
+                    headers: { "Authorization": appState.sessionToken },
+                    type: "PUT",
+                    url: "/api/posts/" + data.id,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
             
             self.getSessionByToken = function (token, successCallback, errorCallback) {
                 $.ajax({
