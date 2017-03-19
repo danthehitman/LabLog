@@ -13,13 +13,9 @@ namespace LabLogApi.Model
         public string FileName { get; set; }
         public string Description { get; set; }
         public IEnumerable<string> Tags { get; set; }
-        public Dates ModifiedDates { get; set; }
 
-        public class Dates
-        {
-            public DateTime CreatedDate { get; set; }
-            public DateTime LastEditedDate { get; set; }
-        }
+        public DateTime CreatedDate { get; set; }
+        public DateTime LastEditedDate { get; set; }
 
         [ForeignKey(typeof(User))]
         public Guid? OwnerId { get; set; }

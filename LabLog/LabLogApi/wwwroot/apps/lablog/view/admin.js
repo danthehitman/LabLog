@@ -4,6 +4,7 @@
             var self = this;
             var sessionService = require('sessionService');
             var llapi = require('llapi');
+
             self.uploadClick = function () {
                 var fileUpload = $("#files").get(0);
                 var files = fileUpload.files;

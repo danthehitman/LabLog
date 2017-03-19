@@ -7,9 +7,6 @@
         knockout: '/lib/knockout/dist/knockout',
         jquery: '/lib/jquery/dist/jquery',
         jqueryUi: '/lib/jquery-ui/ui',
-        view: 'view',
-        model: 'model',
-        service: 'service',
         sessionService: "/apps/common/service/sessionservice",
         llapi: "/apps/common/service/lablogapi",
         cookies: '/lib/js-cookie/src/js.cookie'
@@ -19,6 +16,9 @@
             ko: "knockout",
             utils: "/apps/common/utils.js",
             appState: "/apps/common/model/appstate.js",
+            navState: "/apps/admin/model/navigationstate.js",
+            
+            fileUploadViewModel: "/apps/admin/viewmodel/fileuploadviewmodel.js"
         }
     },
     shim: {
@@ -36,16 +36,20 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'], function (sy
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'hitmanlabs';
+    app.title = 'labadmin';
 
     app.configurePlugins({
         router: true,
         dialog: true
     });
 
+    viewLocator.convertModuleIdToViewId = function (moduleId) {
+        return moduleId.replace(/viewmodel/gi, "view");
+    };
+
     app.start().then(function () {
         //Show the app by setting the root view model for our application with a transition.
-        app.setRoot('app');
+        app.setRoot('viewmodel/app');
         $.ajaxSetup({ cache: false });
     });
 });

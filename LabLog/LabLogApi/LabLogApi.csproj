@@ -5,6 +5,61 @@
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
 	<UserSecretsId>E0CC902F-D852-40AD-981A-DB03E0778864</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\admin.html" />
+    <Content Include="wwwroot\admin.min.html" />
+    <Content Include="wwwroot\apps\admin\app.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\css\admin.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\main.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\model\appstate.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\model\navigationstate.js" />
+    <Content Include="wwwroot\apps\admin\service\lablogapi.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\service\sessionservice.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
+    <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
+    <Content Include="wwwroot\apps\admin\view\adminiew.html" />
+    <Content Include="wwwroot\apps\admin\view\adminView.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\view\admin.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\view\adminView.js" />
+    <Content Include="wwwroot\apps\admin\view\adminview1.html" />
+    <Content Include="wwwroot\apps\admin\view\adminviewmodel.js" />
+    <Content Include="wwwroot\apps\admin\view\app.html" />
+    <Content Include="wwwroot\apps\admin\view\blog.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\view\blog.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\admin\view\fileuploadview.html" />
+    <Content Include="wwwroot\apps\admin\view\mainview.html" />
+    <Content Include="wwwroot\apps\admin\view\posteditview.html" />
+    <Content Include="wwwroot\apps\admin\view\postedview.html" />
+    <Content Include="wwwroot\apps\common\lablogapi.js" />
+    <Content Include="wwwroot\apps\common\model\appstate.js" />
+    <Content Include="wwwroot\apps\common\service\appstate.js" />
+    <Content Include="wwwroot\apps\common\service\lablogapi.js" />
+    <Content Include="wwwroot\apps\common\service\sessionservice.js" />
+    <Content Include="wwwroot\apps\common\sessionservice.js" />
+    <Content Include="wwwroot\apps\lablog\view\admin.html" />
+    <Content Include="wwwroot\apps\lablog\view\admin.js" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Auth" Version="1.21.0" />
     <PackageReference Include="Google.Apis.Oauth2.v2" Version="1.21.0.672" />
