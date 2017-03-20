@@ -31,9 +31,12 @@ namespace LabLogApi.Controllers
         // GET: api/Image
         [HttpGet]
         [Authorize(Policy = "AuthToken")]
-        public IEnumerable<string> Get()
+        public IEnumerable<Image> Get()
         {
-            return new string[] { "value1", "value2" };
+            using (var session = _documentStore.LightweightSession())
+            {
+                return session.Query<Image>();
+            }
         }
 
         // GET: api/Image/5

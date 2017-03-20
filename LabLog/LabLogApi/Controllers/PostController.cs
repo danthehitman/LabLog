@@ -50,7 +50,6 @@ namespace LabLogApi.Controllers
             {
                 post.CreatedDate = DateTime.UtcNow;
                 post.LastEditedDate = DateTime.UtcNow;
-                post.PublishedDate = DateTime.UtcNow;
                 session.Store(post);
                 session.SaveChanges();
                 return post;
@@ -69,6 +68,7 @@ namespace LabLogApi.Controllers
                 existingPost.Title = post.Title;
                 existingPost.Body = post.Body;
                 existingPost.LastEditedDate = DateTime.UtcNow;
+                session.Store(existingPost);
                 session.SaveChanges();
                 return existingPost;
             }

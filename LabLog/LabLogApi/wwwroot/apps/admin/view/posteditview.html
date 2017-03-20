@@ -1,5 +1,12 @@
 ﻿<div data-bind="with:postEditViewModel">
     <div class="llAdminPostEditFormTextInputContainer">
+        <span class="llAdminPostEditLabelSpan">Id:</span>
+        <span class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().id" class="llAdminPostEditTextInput" type="text" /></span>
+    </div>
+    <div>
+        <div><input type="button" data-bind="click:onLoadFromIdClicked" value="Load Post" /></div>
+    </div>
+    <div class="llAdminPostEditFormTextInputContainer">
         <span class="llAdminPostEditLabelSpan">Title:</span>
         <span  class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().title" class="llAdminPostEditTextInput" type="text" /></span>
     </div>
@@ -9,7 +16,11 @@
     </div>
     <div class="llAdminPostEditFormTextInputContainer">
         <span class="llAdminPostEditLabelSpan">Tags:</span>
-        <span class="llAdminPostEditLongTextSpan"><input data-bind="value:postModel().tags" class="llAdminPostEditTextInput" type="text" /></span>
+        <span class="llAdminPostEditLongTextSpan"><input data-bind="value:newTagText" /><input type="button" data-bind="click:onAddTagClicked" value="Add Tag" /></span>
+    </div>
+    <div>
+        <select multiple="multiple" width="50" data-bind="options: postModel().tags, selectedOptions: selectedTags"> </select>
+        <input type="button" value="Remove Tag" data-bind="click:onRemoveTagClicked"/>
     </div>
     <div class="llAdminPostEditFormTextInputContainer">
         <span class="llAdminPostEditLabelSpan">Publish Date:</span>
@@ -21,5 +32,14 @@
     </div>
     <div>
         <div><input type="button" data-bind="click:onSubmitPostClicked" value="Save"/></div>
+    </div>
+    <div>
+        <input type="button" value="Insert Image" data-bind="click:onAddImageClicked" />
+    </div>
+    <div>
+        <input type="button" value="Load Images" data-bind="click:onLoadImagesClicked" />
+    </div>
+    <div>
+        <select width="50" data-bind="options: images, optionsText:'name', optionsValue:'fileName', value: selectedImage"></select>
     </div>
 </div>

@@ -3853,7 +3853,7 @@
     "microsoft.aspnetcore.authentication/1.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KQ39XT2JiQOTdA+/OeXNNAw8cBh5D6N+qKc7bXdtaZH6aXcCL8Au5N6AVtLtwJnr603Rn6ZtuimZNFC7XOz5WA==",
+      "sha512": "sha512-cODSsUSurBIVRtNbxyj+/SVNT/QdZa4ZWb9a+p9FCjsOICKai4XIqd7v4z6SDSh4gD2rupglf16jpP5qvnbLiQ==",
       "path": "microsoft.aspnetcore.authentication/1.1.1",
       "hashPath": "microsoft.aspnetcore.authentication.1.1.1.nupkg.sha512"
     },

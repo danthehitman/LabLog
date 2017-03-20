@@ -4726,7 +4726,7 @@
       ]
     },
     "Microsoft.AspNetCore.Authentication/1.1.1": {
-      "sha512": "KQ39XT2JiQOTdA+/OeXNNAw8cBh5D6N+qKc7bXdtaZH6aXcCL8Au5N6AVtLtwJnr603Rn6ZtuimZNFC7XOz5WA==",
+      "sha512": "cODSsUSurBIVRtNbxyj+/SVNT/QdZa4ZWb9a+p9FCjsOICKai4XIqd7v4z6SDSh4gD2rupglf16jpP5qvnbLiQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.authentication/1.1.1",
       "files": [
@@ -11498,15 +11498,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\frankda\\.nuget\\packages\\": {}
+    "C:\\Users\\dan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dan\\Dev\\LabLog\\LabLog\\LabLogApi\\LabLogApi.csproj",
+      "projectUniqueName": "C:\\Dan\\Projects\\LabLog\\LabLog\\LabLogApi\\LabLogApi.csproj",
       "projectName": "LabLogApi",
-      "projectPath": "C:\\Dan\\Dev\\LabLog\\LabLog\\LabLogApi\\LabLogApi.csproj",
-      "outputPath": "C:\\Dan\\Dev\\LabLog\\LabLog\\LabLogApi\\obj\\",
+      "projectPath": "C:\\Dan\\Projects\\LabLog\\LabLog\\LabLogApi\\LabLogApi.csproj",
+      "outputPath": "C:\\Dan\\Projects\\LabLog\\LabLog\\LabLogApi\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

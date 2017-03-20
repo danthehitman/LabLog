@@ -15,11 +15,11 @@
                 if (result != null && result.token == appState.getSessionCookie())
                 {
                     appState.activeSession = true;
+                    appState.setSessionToken(result.token);
                     console.log(result.token);
                 }
                 else {
-                    appState.activeSession = false;
-                    appState.deleteSessionCookie();
+                    self.onCheckActiveSessionError();
                 }
             };
 

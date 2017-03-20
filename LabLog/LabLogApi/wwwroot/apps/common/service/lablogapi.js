@@ -14,13 +14,36 @@
                 });
             };
 
+            self.getPostById = function (id, successCallback, errorCallback) {
+                $.ajax({
+                    type: 'GET',
+                    headers: { "Authorization": appState.sessionToken },
+                    url: '/api/posts/' + id,
+                    async: true,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
+
+            self.getImages = function (successCallback, errorCallback) {
+                $.ajax({
+                    type: 'GET',
+                    headers: { "Authorization": appState.sessionToken },
+                    url: '/api/images',
+                    async: true,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
+
             self.createPost = function (data, successCallback, errorCallback) {
                 $.ajax({
-                    headers: { "Authorization": appState.sessionToken, "Content-Type": "application/json" },
+                    headers: { "Authorization": appState.sessionToken},
                     type: "POST",
                     url: "/api/posts",
-                    contentType: false,
+                    contentType: 'application/json',
                     processData: false,
+                    dataType: 'json',
                     data: JSON.stringify(data),
                     success: successCallback,
                     error: errorCallback
@@ -29,11 +52,12 @@
 
             self.updatePost = function (data, successCallback, errorCallback) {
                 $.ajax({
-                    headers: { "Authorization": appState.sessionToken, "Content-Type": "application/json" },
+                    headers: { "Authorization": appState.sessionToken},
                     type: "PUT",
                     url: "/api/posts/" + data.id,
-                    contentType: false,
+                    contentType: 'application/json',
                     processData: false,
+                    dataType: 'json',
                     data: JSON.stringify(data),
                     success: successCallback,
                     error: errorCallback
