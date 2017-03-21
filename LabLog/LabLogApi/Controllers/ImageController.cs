@@ -110,7 +110,7 @@ namespace LabLogApi.Controllers
                     Name = name,
                     FileName = newFileName,
                     Description = description,
-                    Tags = tags[0].Split(',').ToArray().Select(s=>s.Trim()),
+                    Tags = tags[0].Split(',').Select(s=>s.Trim()).ToArray(),
                     CreatedDate = DateTime.UtcNow,
                     LastEditedDate = DateTime.UtcNow
                 };
