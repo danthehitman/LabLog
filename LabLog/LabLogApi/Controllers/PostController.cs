@@ -68,6 +68,7 @@ namespace LabLogApi.Controllers
                 existingPost.Title = post.Title;
                 existingPost.Body = post.Body;
                 existingPost.LastEditedDate = DateTime.UtcNow;
+                existingPost.Tags = existingPost.Tags.Select(s => s.Trim());
                 session.Store(existingPost);
                 session.SaveChanges();
                 return existingPost;
