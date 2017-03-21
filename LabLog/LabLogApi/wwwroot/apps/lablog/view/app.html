@@ -1,0 +1,8 @@
+﻿<div>
+    <div id="llBlogHome" data-bind="visible: navState.activeTab() == navState.tabs.home">
+        <div data-bind="compose: '/apps/lablog/view/homeview.html'"></div>
+    </div>
+    <div id="llBlogPost" data-bind="visible: navState.activeTab() == navState.tabs.post">
+        <div data-bind="compose: '/apps/lablog/view/postview.html'"></div>
+    </div>
+</div>

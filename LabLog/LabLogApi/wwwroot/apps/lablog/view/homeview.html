@@ -1,6 +1,6 @@
-﻿<section>
-    <h2>Posts</h2>
-    <div id="llBlogMain">
+﻿<div data-bind="with:homeViewModel">
+    <h2>hitmanlabs</h2>
+    <div class="llBlogMain">
         <div data-bind="foreach: posts">
             <div class="llPostContainer">
                 <h1 data-bind="text: title"></h1>
@@ -10,4 +10,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>

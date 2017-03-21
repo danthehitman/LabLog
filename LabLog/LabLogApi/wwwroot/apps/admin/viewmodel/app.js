@@ -2,6 +2,7 @@
     function (sessionService, llapi, navState, fileUploadViewModel, postEditViewModel) {
         return function app() {
             var self = this;
+
             self.sessionService = sessionService;
             self.navState = navState;
 

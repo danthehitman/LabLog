@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\apps\admin\service\**" />
+    <Compile Remove="wwwroot\apps\lablog\service\**" />
     <Content Remove="wwwroot\apps\admin\service\**" />
+    <Content Remove="wwwroot\apps\lablog\service\**" />
     <EmbeddedResource Remove="wwwroot\apps\admin\service\**" />
+    <EmbeddedResource Remove="wwwroot\apps\lablog\service\**" />
     <None Remove="wwwroot\apps\admin\service\**" />
+    <None Remove="wwwroot\apps\lablog\service\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,10 +37,26 @@
     <Content Include="wwwroot\apps\admin\view\mainview.html" />
     <Content Include="wwwroot\apps\admin\view\posteditview.html" />
     <Content Include="wwwroot\apps\common\model\appstate.js" />
+    <Content Include="wwwroot\apps\common\model\postmodel.js" />
     <Content Include="wwwroot\apps\common\service\lablogapi.js" />
     <Content Include="wwwroot\apps\common\service\sessionservice.js" />
-    <Content Include="wwwroot\apps\lablog\view\admin.html" />
-    <Content Include="wwwroot\apps\lablog\view\admin.js" />
+    <Content Include="wwwroot\apps\lablog\css\home.css" />
+    <Content Include="wwwroot\apps\lablog\css\post.css" />
+    <Content Include="wwwroot\apps\lablog\model\navigationstate.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\apps\lablog\viewmodel\app.js" />
+    <Content Include="wwwroot\apps\lablog\viewmodel\homeviewmodel.js" />
+    <Content Include="wwwroot\apps\lablog\viewmodel\indexviewmodel.js" />
+    <Content Include="wwwroot\apps\lablog\viewmodel\postviewmodel.js" />
+    <Content Include="wwwroot\apps\lablog\view\app.html" />
+    <Content Include="wwwroot\apps\lablog\view\app.js" />
+    <Content Include="wwwroot\apps\lablog\view\homeview.html" />
+    <Content Include="wwwroot\apps\lablog\view\index.html" />
+    <Content Include="wwwroot\apps\lablog\view\index.js" />
+    <Content Include="wwwroot\apps\lablog\view\indexview.html" />
+    <Content Include="wwwroot\apps\lablog\view\indexview.js" />
+    <Content Include="wwwroot\apps\lablog\view\postview.html" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Auth" Version="1.21.0" />
@@ -62,8 +82,6 @@
 	<DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\apps\lablog\model\" />
-    <Folder Include="wwwroot\apps\lablog\service\" />
     <Folder Include="wwwroot\images\userimages\" />
   </ItemGroup>
 

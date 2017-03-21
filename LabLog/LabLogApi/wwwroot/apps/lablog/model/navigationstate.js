@@ -4,9 +4,8 @@
             var self = this;
 
             self.tabs = {
-                main: "main",
-                fileUpload: "fileUpload",
-                postEditor: "postEditor"
+                home: "home",
+                post: "post"
             };
             
             self.activeTab = ko.observable(self.tabs.main);

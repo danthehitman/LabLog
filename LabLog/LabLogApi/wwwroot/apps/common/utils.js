@@ -1,6 +1,6 @@
 ﻿define([],
     function () {
-        return function utils() {
+        var singleton = function utils() {
             var self = this;
 
             self.storeCookie = function (key, value, expires) {
@@ -26,12 +26,28 @@
                     results = regex.exec(location.search);
                 return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
             };
-
-            //get the current host and protocol as a string.  e.g. https://dev.pipelinecloud.com
+            
             self.getHostAndProtocolString = function () {
                 return window.location.protocol + "//" + window.location.host;
             };
+            
+            self.getPathEnd = function () {
+                var path = window.location.pathname;
+                return path.substring(path.lastIndexOf('/') + 1);
+            };
 
-        }
+            self.getPrimaryPath = function () {
+                var path = window.location.pathname;
+                var result = path.substring(path.indexOf('/') + 1);
+                var lastSlashIndex = result.lastIndexOf('/');
+                if (lastSlashIndex > 0)
+                {
+                    result = result.substring(0, lastSlashIndex);
+                }
+                return result;
+            };
+        };
+
+        return new singleton();
     }
 );
