@@ -6,6 +6,17 @@
             self.id = ko.observable();
             self.title = ko.observable("");
             self.body = ko.observable("");
+            self.summaryBody = ko.computed(function () {
+                var body = self.body();
+                var summary = body.substring(body.indexOf('<p>'), body.indexOf('</p>'));
+                return summary;
+            });
+            self.firstImage = ko.computed(function () {
+                var body = self.body();
+                var image = body.substring(body.indexOf('<img'));
+                image = image.substring(0,image.indexOf('>') + 1);
+                return image;
+            });
             self.tags = ko.observableArray();
             self.byLine = ko.observable("");
             self.publishedDate = ko.observable();
@@ -27,12 +38,12 @@
             };
 
             self.loadFromObject = function (object) {
-                self.id(object.id);
-                self.title(object.title);
-                self.body(object.body);
-                self.tags(object.tags);
-                self.byLine(object.byLine);
-                self.publishedDate(object.publishedDate);
+                self.id(object.id || "");
+                self.title(object.title || "");
+                self.body(object.body || "");
+                self.tags(object.tags || "");
+                self.byLine(object.byLine || "");
+                self.publishedDate(object.publishedDate || "");
             };
         };
     }

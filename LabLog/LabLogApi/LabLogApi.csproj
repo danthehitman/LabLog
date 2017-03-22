@@ -47,15 +47,10 @@
     </Content>
     <Content Include="wwwroot\apps\lablog\viewmodel\app.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\homeviewmodel.js" />
-    <Content Include="wwwroot\apps\lablog\viewmodel\indexviewmodel.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\postviewmodel.js" />
     <Content Include="wwwroot\apps\lablog\view\app.html" />
     <Content Include="wwwroot\apps\lablog\view\app.js" />
     <Content Include="wwwroot\apps\lablog\view\homeview.html" />
-    <Content Include="wwwroot\apps\lablog\view\index.html" />
-    <Content Include="wwwroot\apps\lablog\view\index.js" />
-    <Content Include="wwwroot\apps\lablog\view\indexview.html" />
-    <Content Include="wwwroot\apps\lablog\view\indexview.js" />
     <Content Include="wwwroot\apps\lablog\view\postview.html" />
   </ItemGroup>
   <ItemGroup>

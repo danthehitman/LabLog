@@ -26,7 +26,7 @@ namespace LabLogApi.Controllers
         {
             using (var session = _documentStore.QuerySession())
             {
-                return session.Query<Post>();
+                return session.Query<Post>().OrderByDescending(p => p.PublishedDate);
             }
         }
         
@@ -68,7 +68,7 @@ namespace LabLogApi.Controllers
                 existingPost.Title = post.Title;
                 existingPost.Body = post.Body;
                 existingPost.LastEditedDate = DateTime.UtcNow;
-                existingPost.Tags = existingPost.Tags.Select(s => s.Trim());
+                existingPost.Tags = existingPost.Tags.Select(s => s.Trim()).ToArray();
                 session.Store(existingPost);
                 session.SaveChanges();
                 return existingPost;

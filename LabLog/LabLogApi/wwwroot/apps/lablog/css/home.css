@@ -1,10 +1,16 @@
 ﻿body {
 }
+
 body {
-    font-family: Arial;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-.llBlogMain{
+.llSiteHeaderTitle {
+    font-size: 100px;
+    color: #46ACC2;
+}
+
+.llBlogMain {
     width: 800px;
 }
 
@@ -14,24 +20,40 @@ body {
     transform: translate(-50%);
 }
 
-.llPostContainer 
-{
-    width:100%;
-}
-
-.llPostBody 
-{
-    width: 100%;
-}
-
 .centered {
     position: fixed;
     left: 50%;
     transform: translate(-50%);
 }
 
+.llPostContainer 
+{
+    width:100%;
+}
+
+.llPostTitle {
+    font-size: 60px;
+    color: #06D6A0;
+}
+
+.llPostByLine {
+    color: #EB5E55;
+} 
+
+.llPostPublishedDate {
+    color:lightgray;
+}
+
+.llPostBody {
+    width: 100%;
+    font-family: Arial;
+    font-size: 20px;
+    text-align: justify;
+}
+
 .llPostBodyImage {
-    position: relative;
+    /*position: relative;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%);*/
+    width:100%;
 }

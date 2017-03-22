@@ -38,7 +38,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'], function (sy
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'lablog';
+    app.title = 'hitmanlabs';
 
     app.configurePlugins({
         router: true,

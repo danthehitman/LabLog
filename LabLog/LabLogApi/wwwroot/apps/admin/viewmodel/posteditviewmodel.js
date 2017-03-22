@@ -46,7 +46,7 @@
             };
 
             self.onSubmitPostClicked = function() {
-                if (self.postModel().id() == null)
+                if (self.postModel().id() == null || self.postModel().id() == "")
                 {
                     self.llapi.createPost(self.postModel().getDto(), self.onPostEditSuccess, self.onError);
                 }

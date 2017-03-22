@@ -1,5 +1,5 @@
-﻿define(['ko', 'utils', 'llapi', 'sessionService'],
-    function (ko, utils, llapi, sessionService) {
+﻿define(['ko', 'utils', 'llapi', 'sessionService', 'postModel'],
+    function (ko, utils, llapi, sessionService, postModel) {
         return function homeViewModel() {
             var self = this;
 
@@ -11,7 +11,14 @@
             };
 
             self.onGetPostsSuccess = function (results) {
-                self.posts(results);
+                var postModels = [];
+
+                for (var i = 0; i < results.length; i++) {
+                    var newPostModel = new postModel();
+                    newPostModel.loadFromObject(results[i]);
+                    postModels.push(newPostModel);
+                }
+                self.posts(postModels);
             };
 
             self.onGetPostError = function () {
