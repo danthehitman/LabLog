@@ -10,6 +10,15 @@
                 return self;
             };
 
+            self.getBodySummaryCss = function (postRecord) {
+                return postRecord.getFirstImage() == null ? "llSummaryBodyContainerNoImage" : "llSummaryBodyContainer";
+            };
+
+            self.postTitleClicked = function (post) {
+                if (post != null)
+                    window.location = "/post/" + post.id();
+            };
+
             self.onGetPostsSuccess = function (results) {
                 var postModels = [];
 

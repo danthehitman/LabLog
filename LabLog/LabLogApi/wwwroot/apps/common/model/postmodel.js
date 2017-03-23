@@ -8,13 +8,17 @@
             self.body = ko.observable("");
             self.summaryBody = ko.computed(function () {
                 var body = self.body();
-                var summary = body.substring(body.indexOf('<p>'), body.indexOf('</p>'));
+                var summary = body.substring(body.indexOf('<p>'));
+                summary = summary.substring(0, body.indexOf('</p>'));
                 return summary;
             });
             self.firstImage = ko.computed(function () {
                 var body = self.body();
+                if (body.indexOf('<img') < 0)
+                    return null;
+
                 var image = body.substring(body.indexOf('<img'));
-                image = image.substring(0,image.indexOf('>') + 1);
+                image = image.substring(0, image.indexOf('>') + 1);
                 return image;
             });
             self.tags = ko.observableArray();
