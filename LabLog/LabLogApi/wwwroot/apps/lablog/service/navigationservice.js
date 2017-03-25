@@ -1,11 +1,49 @@
-﻿define(['ko', 'homeViewModel', 'postViewModel', 'appState'],
-    function (ko, homeViewModel, postViewModel, appState) {
+﻿define(['ko', 'utils'],
+    function (ko, utils) {
         var singleton = function navigationService() {
             var self = this;
 
-            self.homeViewModel = homeViewModel;
-            self.postViewModel = postViewModel;
-            self.appState = appState;
+            self.onHistoryStateChanged = function () {
+                self.navigateToPath();
+            };
+
+            window.addEventListener('popstate', self.onHistoryStateChanged, false);
+
+            self.validPaths = {
+                index: "index",
+                home: "home",
+                post: "post",
+                tag: "tag"
+            };
+
+            self.primaryPath = ko.observable();
+            self.secondaryPath = ko.observable();
+
+            self.currentPath = ko.observable();
+
+            self.getPrimaryPath = function () {
+                var result = utils.getPrimaryPath();
+                self.primaryPath(result);
+                if (self.validPaths[result])
+                    return result;
+
+                return null;
+            };
+
+            self.getSecondaryPath = function () {
+                var primaryPath = self.getPrimaryPath();
+                if (primaryPath != null) {
+                    result = utils.getPathEnd();
+                    self.secondaryPath(result);
+                    return result;
+                }
+            };
+
+            self.parsePath = function () {
+                self.getPrimaryPath();
+                self.getSecondaryPath();
+                self.currentPath(self.primaryPath() + "/" + self.secondaryPath());
+            };
 
             self.tabs = {
                 home: "home",
@@ -26,52 +64,39 @@
             };
 
             self.navigateToPost = function (postId) {
-                window.history.pushState({}, "", "/posts/" + postId);
+                window.history.pushState({}, "", "/post/" + postId);
                 self.navigateToPath();
             };
 
-            self.navigateToPath = function () {
-                self.disposePageTitleSubscription();
-                switch (self.appState.getPrimaryPath()) {
-                    case self.appState.validPaths.home:
-                        self.activeTab(self.tabs.home);
-                        self.homeViewModel.loadPosts();
-                        self.pageTitle("hitmanlabs: home");
-                        break;
-                    case self.appState.validPaths.tag:
-                        self.activeTab(self.tabs.tag);
-                        self.homeViewModel.loadPosts(self.appState.getPathId());
-                        self.pageTitle("hitmanlabs: " + decodeURIComponent(self.appState.getPathId()));
-                        break;
-                    case self.appState.validPaths.post:
-                        self.activeTab(self.tabs.post);
-                        self.postViewModel.initialize(self.appState.getPathId());
-                        self.pageTitleSubscription = self.postViewModel.post().title.subscribe(self.setPageTitleFromPostTitle);
-                        break;
-                    default:
-                        self.activeTab(self.tabs.home);
-                        self.homeViewModel.loadPosts();
-                        self.pageTitle("hitmanlabs: home");
-                        break;
-                }
-            };
-
-            self.pageTitleSubscription = null;
 
             self.pageTitle = ko.observable("hitmanlabs");
 
-            self.setAppTitle = ko.computed(function () {
-                document.title = self.pageTitle();
-            });
-            
-            self.setPageTitleFromPostTitle = function () {
-                self.pageTitle("hitmanlabs: " + self.postViewModel.post().title());
-            };
 
-            self.disposePageTitleSubscription = function () {
-                if (self.pageTitleSubscription != null)
-                    self.pageTitleSubscription.dispose();
-                self.pageTitleSubscription = null;
+            self.navigateToPath = function () {
+
+                self.parsePath();
+
+                switch (self.getPrimaryPath()) {
+                    case self.validPaths.home:
+                        self.activeTab(self.tabs.home);
+                        self.homeViewModel.loadPosts();
+                        self.pageTitle("hitmanlabs: home");
+                        break;
+                    case self.validPaths.tag:
+                        self.activeTab(self.tabs.tag);
+                        //self.homeViewModel.loadPosts(self.getSecondaryPath());
+                        self.pageTitle("hitmanlabs: " + decodeURIComponent(self.getSecondaryPath()));
+                        break;
+                    case self.validPaths.post:
+                        self.activeTab(self.tabs.post);
+                        //self.postViewModel.initialize(self.getSecondaryPath());
+                        break;
+                    default:
+                        self.activeTab(self.tabs.home);
+                        //self.homeViewModel.loadPosts();
+                        self.pageTitle("hitmanlabs: home");
+                        break;
+                }
             };
         };
         return new singleton();

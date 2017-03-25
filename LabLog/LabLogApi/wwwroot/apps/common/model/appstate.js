@@ -7,30 +7,6 @@
             self.sessionToken = null;
             self.activeSession = false;
 
-            self.validPaths = {
-                home: "home",
-                post: "post",
-                tag: "tag"
-            };
-
-            self.primaryPath = ko.observable();
-
-            self.getPrimaryPath = function () {
-                var result = utils.getPrimaryPath();
-                if (self.validPaths[result])
-                    return result;
-
-                return null;
-            };
-
-            self.getPathId = function () {
-                var primaryPath = self.getPrimaryPath();
-                if (primaryPath != null)
-                {
-                    return utils.getPathEnd();
-                }
-            };
-
             self.setSessionToken = function (token) {
                 self.storeSessionCookie(token);
                 self.sessionToken = token;

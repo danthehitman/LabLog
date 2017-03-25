@@ -5,10 +5,26 @@
 
             self.navService = navService;
 
+            self.onPathChanged = function () {
+                if (self.navService.primaryPath() === self.navService.validPaths.home || 
+                    self.navService.primaryPath() === self.navService.validPaths.index ||
+                    self.navService.primaryPath() === "")
+                {
+                    self.loadPosts();
+                }
+                else if (self.navService.primaryPath() === self.navService.validPaths.tag)
+                {
+                    if (self.navService.secondaryPath() !== null && self.navService.secondaryPath() !== "")
+                    {
+                        self.loadPosts(self.navService.secondaryPath());
+                    }
+                }
+            };
+
             self.posts = ko.observableArray();
 
             self.initialize = function () {
-                self.loadPosts();
+                self.navService.currentPath.subscribe(self.onPathChanged);
                 return self;
             };
 
@@ -43,5 +59,5 @@
                 alert("Error: " + message);
             };
         };
-        return new singleton();
+        return new singleton().initialize();
     });

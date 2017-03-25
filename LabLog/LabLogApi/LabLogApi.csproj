@@ -24,7 +24,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="wwwroot\apps\admin\model\navigationstate.js" />
-    <Content Include="wwwroot\apps\admin\model\postmodel.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\posteditviewmodel.js" />
@@ -40,11 +39,7 @@
     <Content Include="wwwroot\apps\lablog\css\csharp.css" />
     <Content Include="wwwroot\apps\lablog\css\home.css" />
     <Content Include="wwwroot\apps\lablog\css\post.css" />
-    <Content Include="wwwroot\apps\lablog\model\navigationstate.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\apps\lablog\service\navigationservice.js" />
-    <Content Include="wwwroot\apps\lablog\service\navigationstate.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\app.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\homeviewmodel.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\postviewmodel.js" />
@@ -77,6 +72,7 @@
 	<DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\apps\lablog\model\" />
     <Folder Include="wwwroot\images\userimages\" />
   </ItemGroup>
 
