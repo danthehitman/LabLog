@@ -9,10 +9,10 @@
 </div>
 <div class="llHeaderLineBottom"></div>
 <div class="llMainContentContainer llSiteCenter">
-    <div id="llBlogHome" data-bind="visible: [navState.tabs.home, navState.tabs.tag].indexOf(navState.activeTab()) > -1">
+    <div id="llBlogHome" data-bind="visible: [navService.tabs.home, navService.tabs.tag].indexOf(navService.activeTab()) > -1">
         <div data-bind="compose: '/apps/lablog/view/homeview.html'"></div>
     </div>
-    <div id="llBlogPost" data-bind="visible: navState.activeTab() == navState.tabs.post">
+    <div id="llBlogPost" data-bind="visible: navService.activeTab() == navService.tabs.post">
         <div data-bind="compose: '/apps/lablog/view/postview.html'"></div>
     </div>
 </div>

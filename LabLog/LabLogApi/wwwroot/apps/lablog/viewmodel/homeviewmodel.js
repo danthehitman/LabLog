@@ -1,7 +1,9 @@
-﻿define(['ko', 'utils', 'llapi', 'sessionService', 'postModel'],
-    function (ko, utils, llapi, sessionService, postModel) {
-        return function homeViewModel() {
+﻿define(['ko', 'utils', 'llapi', 'sessionService', 'postModel', 'navService'],
+    function (ko, utils, llapi, sessionService, postModel, navService) {
+        var singleton = function homeViewModel() {
             var self = this;
+
+            self.navService = navService;
 
             self.posts = ko.observableArray();
 
@@ -23,7 +25,7 @@
 
             self.postTitleClicked = function (post) {
                 if (post != null)
-                    window.location = "/post/" + post.id();
+                    self.navService.navigateToPost(post.id());
             };
 
             self.onGetPostsSuccess = function (results) {
@@ -41,4 +43,5 @@
                 alert("Error: " + message);
             };
         };
+        return new singleton();
     });

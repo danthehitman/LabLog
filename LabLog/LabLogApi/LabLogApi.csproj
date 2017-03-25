@@ -8,13 +8,9 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\apps\admin\service\**" />
-    <Compile Remove="wwwroot\apps\lablog\service\**" />
     <Content Remove="wwwroot\apps\admin\service\**" />
-    <Content Remove="wwwroot\apps\lablog\service\**" />
     <EmbeddedResource Remove="wwwroot\apps\admin\service\**" />
-    <EmbeddedResource Remove="wwwroot\apps\lablog\service\**" />
     <None Remove="wwwroot\apps\admin\service\**" />
-    <None Remove="wwwroot\apps\lablog\service\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +34,7 @@
     <Content Include="wwwroot\apps\admin\view\posteditview.html" />
     <Content Include="wwwroot\apps\common\model\appstate.js" />
     <Content Include="wwwroot\apps\common\model\postmodel.js" />
+    <Content Include="wwwroot\apps\common\model\servicecontainer.js" />
     <Content Include="wwwroot\apps\common\service\lablogapi.js" />
     <Content Include="wwwroot\apps\common\service\sessionservice.js" />
     <Content Include="wwwroot\apps\lablog\css\csharp.css" />
@@ -46,6 +43,8 @@
     <Content Include="wwwroot\apps\lablog\model\navigationstate.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\apps\lablog\service\navigationservice.js" />
+    <Content Include="wwwroot\apps\lablog\service\navigationstate.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\app.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\homeviewmodel.js" />
     <Content Include="wwwroot\apps\lablog\viewmodel\postviewmodel.js" />

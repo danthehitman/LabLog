@@ -1,6 +1,6 @@
 ﻿define(['ko', 'utils', 'llapi', 'sessionService', 'postModel'],
     function (ko, utils, llapi, sessionService, postModel) {
-        return function postViewModel() {
+        var singleton = function postViewModel() {
             var self = this;
 
             self.post = ko.observable(new postModel());
@@ -22,4 +22,5 @@
                 alert("error");
             };
         };
+        return new singleton();
     });

@@ -16,7 +16,7 @@
             ko: "knockout",
             utils: "/apps/common/utils.js",
             appState: "/apps/common/model/appstate.js",
-            navState: "/apps/lablog/model/navigationstate.js",
+            navService: "/apps/lablog/service/navigationservice.js",
             postModel: "/apps/common/model/postmodel.js",
 
             homeViewModel: "/apps/lablog/viewmodel/homeviewmodel.js",
