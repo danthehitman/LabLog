@@ -76,6 +76,7 @@ namespace LabLogApi
                 DocumentStore.For(_ => {
                     _.Connection(connectionString);
                     _.AutoCreateSchemaObjects = AutoCreate.CreateOrUpdate;
+                    _.Schema.For<Post>().Index(x => x.Tags);
                 }));
 
             var clientId = Configuration["GoogleClientId"];

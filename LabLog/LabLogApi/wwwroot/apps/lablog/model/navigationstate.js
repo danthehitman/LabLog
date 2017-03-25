@@ -5,7 +5,8 @@
 
             self.tabs = {
                 home: "home",
-                post: "post"
+                post: "post",
+                tag: "tag"
             };
             
             self.activeTab = ko.observable(self.tabs.main);

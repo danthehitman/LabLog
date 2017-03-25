@@ -2,12 +2,40 @@
     function (utils, appState) {
         var singleton = function llapi() {
             var self = this;
+
+            self.getPostTags = function (successCallback, errorCallback) {
+                $.ajax({
+                    type: 'GET',
+                    headers: { },
+                    url: '/api/posts/tags',
+                    async: true,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
             
             self.getPosts = function (successCallback, errorCallback) {
                 $.ajax({
                     type: 'GET',
-                    headers: { "Authorization": appState.sessionToken },
+                    headers: {},
                     url: '/api/posts',
+                    async: true,
+                    success: successCallback,
+                    error: errorCallback
+                });
+            };
+
+            self.getPostsByTag = function (tags, successCallback, errorCallback) {
+                var tagsQuery = "";
+                for (var i = 0; i < tags.length; i++) {
+                    tagsQuery = tagsQuery + "tags=" +  tags[i];
+                    if (i < tags.length - 1)
+                        tagsQuery = tagsQuery + "&";
+                }
+                $.ajax({
+                    type: 'GET',
+                    headers: {},
+                    url: '/api/posts?' + tagsQuery,
                     async: true,
                     success: successCallback,
                     error: errorCallback

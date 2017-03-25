@@ -1,4 +1,5 @@
 ﻿body {
+    background-color: #F8F7F5;
 }
 
 body {
@@ -6,34 +7,62 @@ body {
 }
 
 .llHeaderTagContainer {
-    background-color: #4C5454;
+    background-color: #261D15;
     position: fixed;
     left: 0px;
     right: 0px;
     top: 0px;
     height: 30px;
-    border-bottom: 1px solid #F4FAFF;
+    border-bottom: 1px solid #F8F7F5;
+    z-index: 100;
+    padding-top:3px;
+    padding-left:3px;
 }
 
+.llHeaderTagText {
+    color: #F8F7F5;
+    cursor: pointer;
+}
+
+.llHeaderTagHash {
+    color: #979797;
+}
+
+.llHeaderTagDivider {
+    color: #E94F37;
+}
+
+    .llHeaderTagText:hover {
+        text-decoration: underline;
+    }
+
+
 .llSiteCenter {
-    margin-left: 25%;
-    margin-right: 25%;
-    max-width: 800px;
-    min-width: 800px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .llSiteHeaderTitle {
-    font-size: 100px;
-    color: #1C6E8C;
+    font-size: 60px;
+    color: #261D15;
+    width: 800px;
+    cursor: pointer;
 }
 
-.llHeaderLines {
+.llHeaderLineTop {
     width: 100%;
     height: 10px;
-    background-color: #1C1F1F;
-} 
+    background-color: #0B2833;
+}
+.llHeaderLineBottom {
+    width: 100%;
+    height: 5px;
+    background-color: #0B2833;
+    margin-bottom: 20px;
+}
 
-.llBlogHome {
+.llBlogMain {
     width: 800px;
 }
 
@@ -46,9 +75,9 @@ body {
 }
 
 .llSiteHeaderContainer {
+    height: 95px;
     left: 0px;
     right: 0px;
-    background-color: #CED0CE;
 }
 
 .llMainContentContainer {
@@ -66,11 +95,18 @@ body {
 
 .llPostTitle {
     font-size: 60px;
-    color: #06D6A0;
+    color: #1B998B;
 }
 
 .llPostByLine {
-    color: #E53D00;
+    font-family: Arial;
+    color: #E94F37;
+    font-weight: bold;
+}
+
+.llPostByLineBy {
+    font-family: Arial;
+    color: #979797;
 }
 
 .llPostPublishedDate {
@@ -97,7 +133,9 @@ body {
 }
 
 .llSummaryPostContainer {
-    display:table;
+    display: table;
+    margin-top: 10px;
+    border-top: 1px solid #E94F37;
 }
 
 .llSummaryPostHeader {
@@ -106,9 +144,12 @@ body {
 
 .llSummaryPostTitle {
     font-size: 60px;
-    color: #1B998B;
+    color: #0B2833;
     cursor: pointer;
 }
+    .llSummaryPostTitle:hover {
+        text-decoration: underline;
+    }
 
 .llSummaryPostBody {
     width: 100%;

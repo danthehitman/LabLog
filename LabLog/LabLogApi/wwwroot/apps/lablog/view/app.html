@@ -1,11 +1,15 @@
-﻿<div class="llHeaderTagContainer"></div>
-<div class="llSiteHeaderContainer">
-    <div class="llHeaderLines"></div>
-    <div class="llSiteHeaderTitle llSiteCenter">hitmanlabs</div>
-    <div class="llHeaderLines"></div>
+﻿<div class="llHeaderTagContainer" data-bind="foreach: tags">
+    <span class="llHeaderTagHash">#</span>
+    <span class="llHeaderTagText" data-bind="text: name, click: $parent.onTagClicked"></span>
+    <span class="llHeaderTagDivider" data-bind="if: ($index() != ($parent.tags().length - 1))">-</span>
 </div>
+<div class="llSiteHeaderContainer">
+    <div class="llHeaderLineTop"></div>
+    <div class="llSiteHeaderTitle llSiteCenter" data-bind="click: onHomeClicked">hitmanlabs</div>
+</div>
+<div class="llHeaderLineBottom"></div>
 <div class="llMainContentContainer llSiteCenter">
-    <div id="llBlogHome" data-bind="visible: navState.activeTab() == navState.tabs.home">
+    <div id="llBlogHome" data-bind="visible: [navState.tabs.home, navState.tabs.tag].indexOf(navState.activeTab()) > -1">
         <div data-bind="compose: '/apps/lablog/view/homeview.html'"></div>
     </div>
     <div id="llBlogPost" data-bind="visible: navState.activeTab() == navState.tabs.post">

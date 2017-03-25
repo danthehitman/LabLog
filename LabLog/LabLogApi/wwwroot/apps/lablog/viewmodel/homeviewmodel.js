@@ -6,8 +6,15 @@
             self.posts = ko.observableArray();
 
             self.initialize = function () {
-                llapi.getPosts(self.onGetPostsSuccess, self.onGetPostError);
+                self.loadPosts();
                 return self;
+            };
+
+            self.loadPosts = function (tag) {
+                if (tag)
+                    llapi.getPostsByTag([tag], self.onGetPostsSuccess, self.onError);
+                else
+                    llapi.getPosts(self.onGetPostsSuccess, self.onError);
             };
 
             self.getBodySummaryCss = function (postRecord) {
@@ -30,8 +37,8 @@
                 self.posts(postModels);
             };
 
-            self.onGetPostError = function () {
-                alert("error");
+            self.onError = function (message) {
+                alert("Error: " + message);
             };
         };
     });

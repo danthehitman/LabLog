@@ -24,6 +24,16 @@ namespace LabLogApi.Controllers
             return File(fs, "text/html");
         }
 
+        [Route("tag/{tag}")]
+        public ActionResult GetTag()
+        {
+            var filePath = Path.Combine(_appEnvironment.WebRootPath
+                        , Path.Combine("index.html"));
+
+            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            return File(fs, "text/html");
+        }
+
         [Route("post/{id}")]
         public ActionResult GetPost()
         {

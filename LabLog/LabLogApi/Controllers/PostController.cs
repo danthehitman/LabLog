@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LabLogApi.Exceptions;
 using LabLogApi.Model;
 using Marten;
+using Marten.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,14 +23,38 @@ namespace LabLogApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Post> Get()
+        public IEnumerable<Post> Get([FromQuery] List<string> tags, [FromQuery] int? start, [FromQuery] int? count)
         {
             using (var session = _documentStore.QuerySession())
             {
-                return session.Query<Post>().OrderByDescending(p => p.PublishedDate);
+                var query = session.Query<Post>();
+                if (tags.Count() > 0)
+                {
+                    foreach (var tag in tags)
+                    {
+                        query = query.Where(x => x.Tags.Contains(tag)) as IMartenQueryable<Post>;
+                    }
+                }
+                if (start.HasValue)
+                    query = query.Skip(start.Value) as IMartenQueryable<Post>;
+                if (count.HasValue)
+                    query = query.Take(count.Value) as IMartenQueryable<Post>;
+                query = query.OrderByDescending(p => p.PublishedDate)as IMartenQueryable<Post>;
+
+                return query.ToArray();
             }
         }
-        
+
+        [HttpGet, Route("tags")]
+        public IEnumerable<object> GetTags()
+        {
+            using (var session = _documentStore.QuerySession())
+            {
+                var tags = session.Query<Post>().SelectMany(x => x.Tags).ToList();
+                return tags.GroupBy(x => x).Select(r => new { Count = r.Count(), Name = r.Key }).OrderByDescending(o => o.Count).ThenBy(t => t.Name);
+            }
+        }
+
         [HttpGet("{id}")]
         public Post Get(Guid id)
         {

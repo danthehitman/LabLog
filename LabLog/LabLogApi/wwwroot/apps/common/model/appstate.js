@@ -10,6 +10,7 @@
             self.validPaths = {
                 home: "home",
                 post: "post",
+                tag: "tag"
             };
 
             self.primaryPath = ko.observable();

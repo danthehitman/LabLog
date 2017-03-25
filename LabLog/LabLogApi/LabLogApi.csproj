@@ -40,6 +40,7 @@
     <Content Include="wwwroot\apps\common\model\postmodel.js" />
     <Content Include="wwwroot\apps\common\service\lablogapi.js" />
     <Content Include="wwwroot\apps\common\service\sessionservice.js" />
+    <Content Include="wwwroot\apps\lablog\css\csharp.css" />
     <Content Include="wwwroot\apps\lablog\css\home.css" />
     <Content Include="wwwroot\apps\lablog\css\post.css" />
     <Content Include="wwwroot\apps\lablog\model\navigationstate.js">
