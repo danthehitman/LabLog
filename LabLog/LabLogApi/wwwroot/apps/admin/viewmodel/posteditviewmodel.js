@@ -18,7 +18,8 @@
             };
 
             self.onAddImageClicked = function () {
-                self.postModel().body(self.postModel().body() + "<img class='llPostBodyImage' src='/images/userimages/" + self.selectedImage() + "'/>");
+                tinyMCE.activeEditor.setContent(tinyMCE.activeEditor.getContent() + "<img class='llPostBodyImage' src='/images/userimages/" + self.selectedImage() + "'/>");
+                //self.postModel().body(self.postModel().body() + "<img class='llPostBodyImage' src='/images/userimages/" + self.selectedImage() + "'/>");
             };
 
             self.onAddTagClicked = function () {
@@ -45,7 +46,8 @@
                 }
             };
 
-            self.onSubmitPostClicked = function() {
+            self.onSubmitPostClicked = function () {
+                self.postModel().body(tinyMCE.activeEditor.getContent());
                 if (self.postModel().id() == null || self.postModel().id() == "")
                 {
                     self.llapi.createPost(self.postModel().getDto(), self.onPostEditSuccess, self.onError);
