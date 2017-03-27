@@ -1,14 +1,14 @@
 ﻿<div data-bind="with:postViewModel">
     <div class="llBlogMain">
-        <div class="llPostContainer">
+        <div class="llPostContainer" data-bind="visible: showPostContainer">
             <div class="llPostTitle" data-bind="text: post().title"></div>
             <div>
                 <span class="llPostByLineBy">by </span><span class="llPostByLine" data-bind="text: post().byLine"></span>
                 <span class="llPostPublishedDate" data-bind="text: post().publishedDatePretty"></span>
             </div>
-        </div>
-        <div class="llPostBody">
-            <p data-bind="html: post().body"></p>
+            <div class="llPostBody">
+                <p data-bind="html: post().body"></p>
+            </div>
         </div>
     </div>
 </div>

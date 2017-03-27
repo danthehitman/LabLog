@@ -4,6 +4,7 @@
             var self = this;
 
             self.navService = navService;
+            self.showPostContainer = ko.observable(false);
 
             self.onPathChanged = function () {
                 if (self.navService.primaryPath() === self.navService.validPaths.post) {
@@ -22,11 +23,13 @@
             };
 
             self.loadPost = function (id) {
+                self.showPostContainer(false);
                 llapi.getPostById(id, self.onGetPostsSuccess, self.onGetPostError);
             };
 
             self.onGetPostsSuccess = function (result) {
                 self.post().loadFromObject(result);
+                self.showPostContainer(true);
                 self.navService.pageTitle("hitmanlabs: " + self.post().title());
             };
 
