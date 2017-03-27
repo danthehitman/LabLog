@@ -5,8 +5,6 @@
 
             self.navService = navService;
 
-            //self.navService.currentPath.subscribe(self.onPathChanged);
-
             self.onPathChanged = function () {
                 if (self.navService.primaryPath() === self.navService.validPaths.post) {
                     if (self.navService.secondaryPath() !== null && self.navService.secondaryPath() !== "")
@@ -29,7 +27,7 @@
 
             self.onGetPostsSuccess = function (result) {
                 self.post().loadFromObject(result);
-                self.navService.pageTitle("hitmanlabs: " + self.postViewModel.post().title());
+                self.navService.pageTitle("hitmanlabs: " + self.post().title());
             };
 
             self.onGetPostError = function () {

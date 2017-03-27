@@ -12,7 +12,7 @@ namespace LabLogApi.Model
         public string Title { get; set; }
         public string Body { get; set; }
         public string ByLine { get; set; }
-        public IEnumerable<string> Tags { get; set; }
+        public IList<string> Tags { get; set; }
 
         public DateTime CreatedDate { get; set; }
         public DateTime LastEditedDate { get; set; }

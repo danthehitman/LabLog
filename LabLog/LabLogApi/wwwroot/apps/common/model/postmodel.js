@@ -24,6 +24,11 @@
             self.tags = ko.observableArray();
             self.byLine = ko.observable("");
             self.publishedDate = ko.observable();
+            self.publishedDatePretty = ko.computed(function () {
+                var parsedDate = new Date(self.publishedDate());
+                if (parsedDate != null)
+                    return (parsedDate.getMonth() + 1) + '-' + parsedDate.getDate() + '-' + parsedDate.getFullYear();
+            });
 
             self.getDto = function () {
                 return {

@@ -12,7 +12,6 @@
 
             self.tags = ko.observableArray();
 
-
             self.activate = function () {
                 self.sessionService.initialize();
                 self.navService.navigateToPath();
