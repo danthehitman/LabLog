@@ -33,6 +33,7 @@
             };
 
             self.onLoadFromIdSuccess = function (result) {
+                self.postModel().body(tinyMCE.activeEditor.getContent());
                 self.postModel().loadFromObject(result);
             };
 
