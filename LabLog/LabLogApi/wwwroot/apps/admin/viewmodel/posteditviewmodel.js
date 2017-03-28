@@ -33,8 +33,8 @@
             };
 
             self.onLoadFromIdSuccess = function (result) {
-                self.postModel().body(tinyMCE.activeEditor.getContent());
                 self.postModel().loadFromObject(result);
+                tinyMCE.activeEditor.setContent(self.postModel().body());
             };
 
             self.onRemoveTagClicked = function () {
