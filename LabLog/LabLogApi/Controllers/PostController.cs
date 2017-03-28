@@ -102,6 +102,7 @@ namespace LabLogApi.Controllers
         }
         
         [HttpDelete("{id}")]
+        [Authorize(Policy = "AuthToken")]
         public void Delete(Guid id)
         {
             using (var session = _documentStore.LightweightSession())

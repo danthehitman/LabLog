@@ -79,7 +79,7 @@
             };
 
             self.onSignInFailure = function (results) {
-                appState.deleteSessionCookie();
+                self.disconnectFromGoogleSession();
             };
 
             self.checkPlusLoaded = function () {
@@ -97,7 +97,7 @@
 
             self.disconnectFromGoogleSession = function () {
                 self.auth2.disconnect().then(
-                        appState.deleteSessionCookie()
+                    appState.deleteSessionToken()
                 );
             };
 

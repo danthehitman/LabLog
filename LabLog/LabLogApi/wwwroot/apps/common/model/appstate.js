@@ -12,6 +12,11 @@
                 self.sessionToken = token;
             };
 
+            self.deleteSessionToken = function () {
+                self.deleteSessionCookie();
+                self.sessionToken = null;
+            };
+
             self.storeSessionCookie = function (token) {
                 Cookies.set(sessionTokenKey, token, { expires: 2 });
             };
