@@ -10,8 +10,11 @@
                     </div>
                 </div>
                 <div class="llSummaryPostBody">
-                    <div data-bind="css: firstImage() != null ? 'llSummaryBodyContainer' : 'llSummaryBodyContainerNoImage', html: summaryBody"></div>
-                    <div class="llSummaryImageContainer" data-bind=" if: firstImage() != null">
+                    <div data-bind="css: (firstVideo != null || firstImage() != null) ? 'llSummaryBodyContainer' : 'llSummaryBodyContainerNoImage', html: summaryBody"></div>
+                    <div class="llSummaryImageContainer" data-bind=" if: firstVideo() != null">
+                        <div data-bind="html: firstVideo"></div>
+                    </div>
+                    <div class="llSummaryImageContainer" data-bind=" if: (firstVideo() == null && firstImage() != null)">
                         <div  data-bind="html: firstImage"></div>
                     </div>
                 </div>

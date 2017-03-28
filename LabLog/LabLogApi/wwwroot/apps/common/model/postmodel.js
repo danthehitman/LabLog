@@ -21,6 +21,17 @@
                 image = image.substring(0, image.indexOf('>') + 1);
                 return image;
             });
+            self.firstVideo = ko.computed(function () {
+                var body = self.body();
+                if (body.indexOf('<iframe ') < 0)
+                    return null;
+
+                var video = body.substring(body.indexOf('<iframe '));
+                if (video.indexOf("youtube.com") < 0)
+                    return null;
+                video = video.substring(0, video.indexOf('</iframe>') + 1);
+                return video;
+            });
             self.tags = ko.observableArray();
             self.byLine = ko.observable("");
             self.publishedDate = ko.observable();
