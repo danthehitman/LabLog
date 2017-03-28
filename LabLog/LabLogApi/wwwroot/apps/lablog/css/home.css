@@ -133,7 +133,7 @@ body {
 }
 
 .llSummaryPostContainer {
-    /*display: table;*/
+    display: table;
     margin-top: 10px;
     border-top: 1px solid #E94F37;
 }
