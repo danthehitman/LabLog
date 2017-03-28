@@ -233,20 +233,3 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 LabLog/LabLogApi/wwwroot/images/userimages/
-LabLog/LabLogApi/wwwroot/lib/jQuery/bower.json
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/.jshintrc
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/ajax/parseJSON.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/css/defaultDisplay.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/css/var/isHidden.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/data/support.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/effects/support.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/intro.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/manipulation/createSafeFragment.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/manipulation/var/nodeNames.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/manipulation/var/rleadingWhitespace.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/outro.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/support.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/var/deletedIds.js
-LabLog/LabLogApi/wwwroot/lib/jQuery/src/var/rnotwhite.js
-LabLog/LabLogApi/wwwroot/lib/jquery/
-LabLog/LabLogApi/wwwroot/lib/tinymce/
