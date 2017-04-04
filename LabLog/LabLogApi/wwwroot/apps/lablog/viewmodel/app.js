@@ -47,5 +47,19 @@
             self.signOutClick = function () {
                 sessionService.disconnectFromGoogleSession();
             };
+
+            self.onScrollTagHeaderLeftClick = function () {
+                event.preventDefault();
+                $('#llHeaderTagContainer').animate({
+                    marginLeft: "+=200px"
+                }, "fast");
+            };
+
+            self.onScrollTagHeaderRightClick = function () {
+                event.preventDefault();
+                $('#llHeaderTagContainer').animate({
+                    marginLeft: "-=200px"
+                }, "fast");
+            }
         };
     });

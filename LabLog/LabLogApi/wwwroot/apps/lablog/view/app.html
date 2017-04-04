@@ -1,8 +1,11 @@
-﻿<div class="llHeaderTagContainer" data-bind="foreach: tags">
+﻿
+<a href="#" data-bind="click:onScrollTagHeaderLeftClick" id="left-button"><<<</a>
+<div id="llHeaderTagContainer" class="llHeaderTagContainer" data-bind="foreach: tags">
     <span class="llHeaderTagHash">#</span>
     <span class="llHeaderTagText" data-bind="text: name, click: $parent.onTagClicked"></span>
     <span class="llHeaderTagDivider" data-bind="if: ($index() != ($parent.tags().length - 1))">-</span>
 </div>
+<a href="#" data-bind="click:onScrollTagHeaderRightClick" id="right-button">>>></a>
 <div class="llSiteHeaderContainer">
     <div class="llHeaderLineTop"></div>
     <div class="llSiteHeaderTitle llSiteCenter" data-bind="click: onHomeClicked">hitmanlabs</div>
