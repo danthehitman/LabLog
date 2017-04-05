@@ -42,7 +42,7 @@ QUnit.test( "empty set", function( assert ) {
 } );
 
 QUnit.test( "disconnected element", function( assert ) {
-	assert.expect( 3 );
+	assert.expect( 2 );
 
 	var result = jQuery( document.createElement( "div" ) ).offset();
 
@@ -51,11 +51,10 @@ QUnit.test( "disconnected element", function( assert ) {
 	// valid input, but will return zeros for back-compat
 	assert.equal( result.top, 0, "Retrieving offset on disconnected elements returns zeros (gh-2310)" );
 	assert.equal( result.left, 0, "Retrieving offset on disconnected elements returns zeros (gh-2310)" );
-	assert.equal( Object.keys( result ).length, 2, "Retrieving offset on disconnected elements returns offset object (gh-3167)" );
 } );
 
 QUnit.test( "hidden (display: none) element", function( assert ) {
-	assert.expect( 3 );
+	assert.expect( 2 );
 
 	var node = jQuery( "<div style='display: none' />" ).appendTo( "#qunit-fixture" ),
 		result = node.offset();
@@ -67,33 +66,6 @@ QUnit.test( "hidden (display: none) element", function( assert ) {
 	// valid input, but will return zeros for back-compat
 	assert.equal( result.top, 0, "Retrieving offset on hidden elements returns zeros (gh-2310)" );
 	assert.equal( result.left, 0, "Retrieving offset on hidden elements returns zeros (gh-2310)" );
-	assert.equal( Object.keys( result ).length, 2, "Retrieving offset on hidden elements returns offset object (gh-3167)" );
-} );
-
-QUnit.test( "0 sized element", function( assert ) {
-	assert.expect( 3 );
-
-	var node = jQuery( "<div style='margin: 5px; width: 0; height: 0' />" ).appendTo( "#qunit-fixture" ),
-		result = node.offset();
-
-	node.remove();
-
-	assert.notEqual( result.top, 0, "Retrieving offset on 0 sized elements (gh-3167)" );
-	assert.notEqual( result.left, 0, "Retrieving offset on 0 sized elements (gh-3167)" );
-	assert.equal( Object.keys( result ).length, 2, "Retrieving offset on 0 sized elements returns offset object (gh-3167)" );
-} );
-
-QUnit.test( "hidden (visibility: hidden) element", function( assert ) {
-	assert.expect( 3 );
-
-	var node = jQuery( "<div style='margin: 5px; visibility: hidden' />" ).appendTo( "#qunit-fixture" ),
-		result = node.offset();
-
-	node.remove();
-
-	assert.notEqual( result.top, 0, "Retrieving offset on visibility:hidden elements (gh-3167)" );
-	assert.notEqual( result.left, 0, "Retrieving offset on visibility:hidden elements (gh-3167)" );
-	assert.equal( Object.keys( result ).length, 2, "Retrieving offset on visibility:hidden elements returns offset object (gh-3167)" );
 } );
 
 testIframe( "absolute", "offset/absolute.html", function( assert, $, iframe ) {

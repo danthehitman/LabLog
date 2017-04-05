@@ -13,7 +13,15 @@ module.exports = function( grunt ) {
 	}
 
 	var fs = require( "fs" ),
-		gzip = require( "gzip-js" );
+		gzip = require( "gzip-js" ),
+		oldNode = /^v0\./.test( process.version );
+
+	// Support: Node.js <4
+	// Skip running tasks that dropped support for Node.js 0.10 & 0.12
+	// in those Node versions.
+	function runIfNewNode( task ) {
+		return oldNode ? "print_old_node_message:" + task : task;
+	}
 
 	if ( !grunt.option( "filename" ) ) {
 		grunt.option( "filename", "jquery.js" );
@@ -167,7 +175,7 @@ module.exports = function( grunt ) {
 						"ascii_only": true
 					},
 					banner: "/*! jQuery v<%= pkg.version %> | " +
-						"(c) JS Foundation and other contributors | jquery.org/license */",
+						"(c) jQuery Foundation | jquery.org/license */",
 					compress: {
 						"hoist_funs": false,
 						loops: false,
@@ -179,32 +187,32 @@ module.exports = function( grunt ) {
 	} );
 
 	// Load grunt tasks from NPM packages
-	require( "load-grunt-tasks" )( grunt );
+	// Support: Node.js <4
+	// Don't load the eslint task in old Node.js, it won't parse.
+	require( "load-grunt-tasks" )( grunt, {
+		pattern: oldNode ? [ "grunt-*", "!grunt-eslint" ] : [ "grunt-*" ]
+	} );
 
 	// Integrate jQuery specific tasks
 	grunt.loadTasks( "build/tasks" );
 
+	grunt.registerTask( "print_old_node_message", function() {
+		var task = [].slice.call( arguments ).join( ":" );
+		grunt.log.writeln( "Old Node.js detected, running the task \"" + task + "\" skipped..." );
+	} );
+
 	grunt.registerTask( "lint", [
 		"jsonlint",
-
-		// Running the full eslint task without breaking it down to targets
-		// would run the dist target first which would point to errors in the built
-		// file, making it harder to fix them. We want to check the built file only
-		// if we already know the source files pass the linter.
-		"eslint:dev",
-		"eslint:dist"
+		runIfNewNode( "eslint" )
 	] );
 
 	grunt.registerTask( "lint:newer", [
 		"newer:jsonlint",
-
-		// Don't replace it with just the task; see the above comment.
-		"newer:eslint:dev",
-		"newer:eslint:dist"
+		runIfNewNode( "newer:eslint" )
 	] );
 
-	grunt.registerTask( "test:fast", "node_smoke_tests" );
-	grunt.registerTask( "test:slow", "promises_aplus_tests" );
+	grunt.registerTask( "test:fast", runIfNewNode( "node_smoke_tests" ) );
+	grunt.registerTask( "test:slow", runIfNewNode( "promises_aplus_tests" ) );
 
 	grunt.registerTask( "test", [
 		"test:fast",
@@ -213,7 +221,7 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( "dev", [
 		"build:*:*",
-		"newer:eslint:dev",
+		runIfNewNode( "newer:eslint:dev" ),
 		"newer:uglify",
 		"remove_map_comment",
 		"dist:*",
@@ -221,12 +229,12 @@ module.exports = function( grunt ) {
 	] );
 
 	grunt.registerTask( "default", [
-		"eslint:dev",
+		runIfNewNode( "eslint:dev" ),
 		"build:*:*",
 		"uglify",
 		"remove_map_comment",
 		"dist:*",
-		"eslint:dist",
+		runIfNewNode( "eslint:dist" ),
 		"test:fast",
 		"compare_size"
 	] );

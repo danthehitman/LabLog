@@ -527,29 +527,4 @@ QUnit.test( "outside view position (gh-2836)", function( assert ) {
 	parent.scrollTop( 400 );
 } );
 
-QUnit.test( "width/height on element with transform (gh-3193)", function( assert ) {
-
-	assert.expect( 2 );
-
-	var $elem = jQuery( "<div style='width: 200px; height: 200px; transform: scale(2);' />" )
-		.appendTo( "#qunit-fixture" );
-
-	assert.equal( $elem.width(), 200, "Width ignores transforms" );
-	assert.equal( $elem.height(), 200, "Height ignores transforms" );
-} );
-
-QUnit.test( "width/height on an inline element with no explicitly-set dimensions (gh-3571)", function( assert ) {
-	assert.expect( 8 );
-
-	var $elem = jQuery( "<span style='border: 2px solid black;padding: 1px;margin: 3px;'>Hello, I'm some text.</span>" ).appendTo( "#qunit-fixture" );
-
-	jQuery.each( [ "Width", "Height" ], function( i, method ) {
-		var val = $elem[ method.toLowerCase() ]();
-		assert.notEqual( val, 0, method + " should not be zero on inline element." );
-		assert.equal( $elem[ "inner" + method ](), val + 2, "inner" + method + " should include padding" );
-		assert.equal( $elem[ "outer" + method ](), val + 6, "outer" + method + " should include padding and border" );
-		assert.equal( $elem[ "outer" + method ]( true ), val + 12, "outer" + method + "(true) should include padding, border, and margin" );
-	} );
-} );
-
 } )();

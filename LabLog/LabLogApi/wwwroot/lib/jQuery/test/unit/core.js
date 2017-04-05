@@ -687,26 +687,17 @@ QUnit.test( "jQuery('html')", function( assert ) {
 	assert.equal( jQuery( "\\<div\\>" ).length, 0, "Ignore escaped html characters" );
 } );
 
-QUnit.test( "jQuery(element with non-alphanumeric name)", function( assert ) {
-	assert.expect( 36 );
+QUnit.test( "jQuery(tag-hyphenated elements) gh-1987", function( assert ) {
+	assert.expect( 17 );
 
-	jQuery.each( [ "-", ":" ], function( i, symbol ) {
-		jQuery.each( [ "thead", "tbody", "tfoot", "colgroup", "caption", "tr", "th", "td" ],
-			function( j, tag ) {
-				var tagName = tag + symbol + "test";
-				var el = jQuery( "<" + tagName + "></" + tagName + ">" );
-				assert.ok( el[ 0 ], "Create a " + tagName + " element" );
-				assert.ok( el[ 0 ].nodeName === tagName.toUpperCase(),
-					tagName + " element has expected node name" );
-			}
-		);
-
-		var tagName = [ "tr", "multiple", "symbol" ].join( symbol );
-		var el = jQuery( "<" + tagName + "></" + tagName + ">" );
-		assert.ok( el[ 0 ], "Create a " + tagName + " element" );
-		assert.ok( el[ 0 ].nodeName === tagName.toUpperCase(),
-			tagName + " element has expected node name" );
+	jQuery.each( "thead tbody tfoot colgroup caption tr th td".split( " " ), function( i, name ) {
+		var j = jQuery( "<" + name + "-d></" + name + "-d>" );
+		assert.ok( j[ 0 ], "Create a tag-hyphenated elements" );
+		assert.ok( jQuery.nodeName( j[ 0 ], name.toUpperCase() + "-D" ), "Tag-hyphenated element has expected node name" );
 	} );
+
+	var j = jQuery( "<tr-multiple-hyphens></tr-multiple-hyphens>" );
+	assert.ok( jQuery.nodeName( j[ 0 ], "TR-MULTIPLE-HYPHENS" ), "Element with multiple hyphens in its tag has expected node name" );
 } );
 
 QUnit.test( "jQuery('massive html #7990')", function( assert ) {
@@ -1170,7 +1161,7 @@ QUnit.test( "jQuery.extend(Object, Object)", function( assert ) {
 	assert.ok( jQuery.extend( true, {}, nestedarray )[ "arr" ] !== arr, "Deep extend of object must clone child array" );
 
 	// #5991
-	assert.ok( Array.isArray( jQuery.extend( true, { "arr": {} }, nestedarray )[ "arr" ] ), "Cloned array have to be an Array" );
+	assert.ok( jQuery.isArray( jQuery.extend( true, { "arr": {} }, nestedarray )[ "arr" ] ), "Cloned array have to be an Array" );
 	assert.ok( jQuery.isPlainObject( jQuery.extend( true, { "arr": arr }, { "arr": {} } )[ "arr" ] ), "Cloned object have to be an plain object" );
 
 	empty = {};
@@ -1291,7 +1282,7 @@ QUnit.test( "jQuery.extend(true,{},{a:[], o:{}}); deep copy with array, followed
 	result = jQuery.extend( true, {}, initial );
 
 	assert.deepEqual( result, initial, "The [result] and [initial] have equal shape and values" );
-	assert.ok( !Array.isArray( result.object ), "result.object wasn't paved with an empty array" );
+	assert.ok( !jQuery.isArray( result.object ), "result.object wasn't paved with an empty array" );
 } );
 
 QUnit.test( "jQuery.each(Object,Function)", function( assert ) {
