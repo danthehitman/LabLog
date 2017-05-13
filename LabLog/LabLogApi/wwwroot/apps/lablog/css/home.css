@@ -6,8 +6,8 @@
 .llHeaderTagContainer {
     background-color: #261D15;
     position: fixed;
-    left: 0px;
-    right: 0px;
+    left: 30px;
+    right: 30px;
     top: 0px;
     height: 30px;
     border-bottom: 1px solid #F8F7F5;
@@ -18,10 +18,34 @@
     white-space: nowrap;
 }
 
+.llHeaderTagScroll {
+    background-color: #261D15;
+    color: #F8F7F5;
+    cursor: pointer;
+    position: fixed;
+    width: 30px;
+    top: 0px;
+    height: 30px;
+    border-bottom: 1px solid #F8F7F5;
+    z-index: 101;
+    vertical-align:middle;
+}
+
+.llHeaderTagLeftScroll {
+    left: 0px;
+}
+
+.llHeaderTagRightScroll {
+    right: 0px;
+} 
+
 .llHeaderTagText {
     color: #F8F7F5;
     cursor: pointer;
 }
+    .llHeaderTagText:hover {
+        text-decoration: underline;
+    }
 
 .llHeaderTagHash {
     color: #979797;
@@ -30,11 +54,6 @@
 .llHeaderTagDivider {
     color: #E94F37;
 }
-
-    .llHeaderTagText:hover {
-        text-decoration: underline;
-    }
-
 
 .llSiteCenter {
     position: absolute;

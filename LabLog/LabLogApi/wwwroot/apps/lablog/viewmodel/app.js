@@ -48,11 +48,14 @@
                 sessionService.disconnectFromGoogleSession();
             };
 
+            self.headerPosition = 0;
+
             self.onScrollTagHeaderLeftClick = function () {
                 event.preventDefault();
                 $('#llHeaderTagContainer').animate({
                     marginLeft: "+=200px"
                 }, "fast");
+                self.headerPosition--;
             };
 
             self.onScrollTagHeaderRightClick = function () {
@@ -60,6 +63,7 @@
                 $('#llHeaderTagContainer').animate({
                     marginLeft: "-=200px"
                 }, "fast");
+                self.headerPosition++;
             }
         };
     });

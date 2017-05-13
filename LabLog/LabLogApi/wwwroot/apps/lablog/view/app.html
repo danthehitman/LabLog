@@ -1,21 +1,20 @@
-﻿
-<a href="#" data-bind="click:onScrollTagHeaderLeftClick" id="left-button"><<<</a>
+﻿<div class="llHeaderTagScroll llHeaderTagLeftScroll" data-bind="click:onScrollTagHeaderLeftClick"><span><<</span></div>
 <div id="llHeaderTagContainer" class="llHeaderTagContainer" data-bind="foreach: tags">
     <span class="llHeaderTagHash">#</span>
     <span class="llHeaderTagText" data-bind="text: name, click: $parent.onTagClicked"></span>
     <span class="llHeaderTagDivider" data-bind="if: ($index() != ($parent.tags().length - 1))">-</span>
 </div>
-<a href="#" data-bind="click:onScrollTagHeaderRightClick" id="right-button">>>></a>
-<div class="llSiteHeaderContainer">
-    <div class="llHeaderLineTop"></div>
-    <div class="llSiteHeaderTitle llSiteCenter" data-bind="click: onHomeClicked">hitmanlabs</div>
-</div>
-<div class="llHeaderLineBottom"></div>
-<div class="llMainContentContainer llSiteCenter">
-    <div id="llBlogHome" data-bind="visible: [navService.tabs.home, navService.tabs.tag].indexOf(navService.activeTab()) > -1">
-        <div data-bind="compose: '/apps/lablog/view/homeview.html'"></div>
+<div class="llHeaderTagScroll llHeaderTagRightScroll" data-bind="click:onScrollTagHeaderRightClick"><span>>></span></div>
+    <div class="llSiteHeaderContainer">
+        <div class="llHeaderLineTop"></div>
+        <div class="llSiteHeaderTitle llSiteCenter" data-bind="click: onHomeClicked">hitmanlabs</div>
     </div>
-    <div id="llBlogPost" data-bind="visible: navService.activeTab() == navService.tabs.post">
-        <div data-bind="compose: '/apps/lablog/view/postview.html'"></div>
+    <div class="llHeaderLineBottom"></div>
+    <div class="llMainContentContainer llSiteCenter">
+        <div id="llBlogHome" data-bind="visible: [navService.tabs.home, navService.tabs.tag].indexOf(navService.activeTab()) > -1">
+            <div data-bind="compose: '/apps/lablog/view/homeview.html'"></div>
+        </div>
+        <div id="llBlogPost" data-bind="visible: navService.activeTab() == navService.tabs.post">
+            <div data-bind="compose: '/apps/lablog/view/postview.html'"></div>
+        </div>
     </div>
-</div>
