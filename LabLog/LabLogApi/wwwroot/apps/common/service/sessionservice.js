@@ -75,6 +75,7 @@
 
             self.onSignInComplete = function (results) {
                 appState.setSessionToken(results.token);
+                appState.activeSession(true);
                 console.log(results.token);
             };
 
