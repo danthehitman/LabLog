@@ -20,7 +20,8 @@
             postModel: "/apps/common/model/postmodel.js",
             
             fileUploadViewModel: "/apps/admin/viewmodel/fileuploadviewmodel.js",
-            postEditViewModel: "/apps/admin/viewmodel/posteditviewmodel.js"
+            postEditViewModel: "/apps/admin/viewmodel/posteditviewmodel.js",
+            homeViewModel: "/apps/admin/viewmodel/homeviewmodel.js"
         }
     },
     shim: {

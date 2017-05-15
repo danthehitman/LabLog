@@ -1,8 +1,10 @@
-﻿define(['ko', 'llapi', 'postModel'],
-    function (ko, llapi, postModel) {
+﻿define(['ko', 'llapi', 'postModel', 'navState'],
+    function (ko, llapi, postModel, navState) {
         return function postEditViewModel() {
             var self = this;
             self.llapi = llapi;
+            self.navState = navState;
+
             self.postModel = ko.observable(new postModel());
             self.newTagText = ko.observable();
             self.selectedTags = ko.observableArray();
@@ -32,8 +34,23 @@
                 self.llapi.getPostById(self.postModel().id(), self.onLoadFromIdSuccess, self.onError);
             };
 
+            self.onNewPostClicked = function () {
+                self.postModel(new postModel());
+                tinyMCE.activeEditor.setContent(self.postModel().body());
+            };
+
+            self.loadPost = function (post) {
+                self.postModel(post);
+                if (tinyMCE.activeEditor != null)
+                    tinyMCE.activeEditor.setContent(self.postModel().body());
+            };
+
             self.onLoadFromIdSuccess = function (result) {
                 self.postModel().loadFromObject(result);
+                tinyMCE.activeEditor.setContent(self.postModel().body());
+            };
+
+            self.onTinyMceInitialized = function() {
                 tinyMCE.activeEditor.setContent(self.postModel().body());
             };
 
@@ -64,7 +81,7 @@
             };
 
             self.onError = function (message) {
-                alert("Error : " + messsage);
+                alert("Error : " + message);
             };
         };
     });

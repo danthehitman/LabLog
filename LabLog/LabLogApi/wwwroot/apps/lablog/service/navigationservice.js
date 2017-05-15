@@ -51,7 +51,7 @@
                 tag: "tag"
             };
             
-            self.activeTab = ko.observable(self.tabs.main);
+            self.activeTab = ko.observable(self.tabs.home);
 
             self.navigateToHome = function () {
                 window.history.pushState({}, "", "/");

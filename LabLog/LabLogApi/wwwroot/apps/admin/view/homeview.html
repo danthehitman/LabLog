@@ -1,0 +1,10 @@
+﻿<div data-bind="with:homeViewModel">
+    <div data-bind="foreach: posts">
+        <div class="llSummaryPostContainer">
+            <div>
+                <span class="llLinkText" data-bind="text: title, click: $parent.postTitleClicked"></span>
+                <span class="llPostPublishedDate" data-bind="text: publishedDatePretty"></span>
+            </div>
+        </div>
+    </div>
+</div>

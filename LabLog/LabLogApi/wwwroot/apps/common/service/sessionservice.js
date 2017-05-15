@@ -14,7 +14,7 @@
             self.onCheckActiveSessionSuccess = function (result) {
                 if (result != null && result.token == appState.getSessionCookie())
                 {
-                    appState.activeSession = true;
+                    appState.activeSession(true);
                     appState.setSessionToken(result.token);
                     console.log(result.token);
                 }
@@ -24,7 +24,7 @@
             };
 
             self.onCheckActiveSessionError = function (result) {
-                appState.activeSession = false;
+                appState.activeSession(false);
                 appState.deleteSessionCookie();
             };
 

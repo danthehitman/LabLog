@@ -4,12 +4,14 @@
             var self = this;
 
             self.tabs = {
-                main: "main",
+                home: "home",
                 fileUpload: "fileUpload",
                 postEditor: "postEditor"
             };
+
+            self.activePost = ko.observable();
             
-            self.activeTab = ko.observable(self.tabs.main);
+            self.activeTab = ko.observable(self.tabs.home);
 
             self.setSessionToken = function (token) {
                 self.storeSessionCookie(token);

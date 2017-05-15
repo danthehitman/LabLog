@@ -26,11 +26,14 @@
     <Content Include="wwwroot\apps\admin\model\navigationstate.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
+    <Content Include="wwwroot\apps\admin\viewmodel\homeviewmodel.js" />
     <Content Include="wwwroot\apps\admin\viewmodel\posteditviewmodel.js" />
     <Content Include="wwwroot\apps\admin\view\app.html" />
     <Content Include="wwwroot\apps\admin\view\fileuploadview.html" />
+    <Content Include="wwwroot\apps\admin\view\homeview.html" />
     <Content Include="wwwroot\apps\admin\view\mainview.html" />
     <Content Include="wwwroot\apps\admin\view\posteditview.html" />
+    <Content Include="wwwroot\apps\common\css\common.css" />
     <Content Include="wwwroot\apps\common\model\appstate.js" />
     <Content Include="wwwroot\apps\common\model\postmodel.js" />
     <Content Include="wwwroot\apps\common\model\servicecontainer.js" />

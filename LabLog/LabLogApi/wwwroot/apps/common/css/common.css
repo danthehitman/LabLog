@@ -1,0 +1,10 @@
+﻿body {
+}
+
+.llLinkText {
+    cursor: pointer;
+}
+
+    .llHeaderTagText:hover {
+        text-decoration: underline;
+    }

@@ -5,7 +5,7 @@
             var sessionTokenKey = "lablogsessiontoken";
 
             self.sessionToken = null;
-            self.activeSession = false;
+            self.activeSession = ko.observable(false);
 
             self.setSessionToken = function (token) {
                 self.storeSessionCookie(token);
