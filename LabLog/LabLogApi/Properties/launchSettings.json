@@ -18,7 +18,7 @@
     "LabLogApi": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "apilogin.html",
+      "launchUrl": "index.html",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

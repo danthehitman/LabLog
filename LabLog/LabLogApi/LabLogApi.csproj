@@ -29,8 +29,8 @@
 	<DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="wwwroot\lib\jQuery\.github\ISSUE_TEMPLATE.md" />
-    <None Include="wwwroot\lib\jQuery\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\lib\jquery\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\lib\jquery\.github\PULL_REQUEST_TEMPLATE.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\apps\admin\service\" />
