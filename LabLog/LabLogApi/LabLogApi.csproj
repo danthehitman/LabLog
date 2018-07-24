@@ -5,52 +5,6 @@
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
 	<UserSecretsId>E0CC902F-D852-40AD-981A-DB03E0778864</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="wwwroot\apps\admin\service\**" />
-    <Content Remove="wwwroot\apps\admin\service\**" />
-    <EmbeddedResource Remove="wwwroot\apps\admin\service\**" />
-    <None Remove="wwwroot\apps\admin\service\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="wwwroot\admin.html" />
-    <Content Include="wwwroot\admin.min.html" />
-    <Content Include="wwwroot\apps\admin\css\admin.css">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\apps\admin\css\postedit.css" />
-    <Content Include="wwwroot\apps\admin\main.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\apps\admin\model\navigationstate.js" />
-    <Content Include="wwwroot\apps\admin\viewmodel\app.js" />
-    <Content Include="wwwroot\apps\admin\viewmodel\fileuploadviewmodel.js" />
-    <Content Include="wwwroot\apps\admin\viewmodel\homeviewmodel.js" />
-    <Content Include="wwwroot\apps\admin\viewmodel\posteditviewmodel.js" />
-    <Content Include="wwwroot\apps\admin\view\app.html" />
-    <Content Include="wwwroot\apps\admin\view\fileuploadview.html" />
-    <Content Include="wwwroot\apps\admin\view\homeview.html" />
-    <Content Include="wwwroot\apps\admin\view\mainview.html" />
-    <Content Include="wwwroot\apps\admin\view\posteditview.html" />
-    <Content Include="wwwroot\apps\common\css\common.css" />
-    <Content Include="wwwroot\apps\common\model\appstate.js" />
-    <Content Include="wwwroot\apps\common\model\postmodel.js" />
-    <Content Include="wwwroot\apps\common\model\servicecontainer.js" />
-    <Content Include="wwwroot\apps\common\service\lablogapi.js" />
-    <Content Include="wwwroot\apps\common\service\sessionservice.js" />
-    <Content Include="wwwroot\apps\lablog\css\csharp.css" />
-    <Content Include="wwwroot\apps\lablog\css\home.css" />
-    <Content Include="wwwroot\apps\lablog\css\post.css" />
-    <Content Include="wwwroot\apps\lablog\service\navigationservice.js" />
-    <Content Include="wwwroot\apps\lablog\viewmodel\app.js" />
-    <Content Include="wwwroot\apps\lablog\viewmodel\homeviewmodel.js" />
-    <Content Include="wwwroot\apps\lablog\viewmodel\postviewmodel.js" />
-    <Content Include="wwwroot\apps\lablog\view\app.html" />
-    <Content Include="wwwroot\apps\lablog\view\app.js" />
-    <Content Include="wwwroot\apps\lablog\view\homeview.html" />
-    <Content Include="wwwroot\apps\lablog\view\postview.html" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Google.Apis.Auth" Version="1.21.0" />
     <PackageReference Include="Google.Apis.Oauth2.v2" Version="1.21.0.672" />
@@ -75,8 +29,11 @@
 	<DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0-msbuild3-final" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\apps\lablog\model\" />
-    <Folder Include="wwwroot\images\userimages\" />
+    <None Include="wwwroot\lib\jQuery\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\lib\jQuery\.github\PULL_REQUEST_TEMPLATE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\apps\admin\service\" />
   </ItemGroup>
 
 </Project>

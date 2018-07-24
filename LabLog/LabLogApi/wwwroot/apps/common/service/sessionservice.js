@@ -100,6 +100,7 @@
                 self.auth2.disconnect().then(
                     appState.deleteSessionToken()
                 );
+                appState.activeSession(false);
             };
 
             window.plusoneLoaded = self.initializeGoogleLogin;
