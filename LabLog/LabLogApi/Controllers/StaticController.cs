@@ -1,6 +1,6 @@
-using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 namespace LabLogApi.Controllers
 {
@@ -13,7 +13,7 @@ namespace LabLogApi.Controllers
         {
             _appEnvironment = appEnvironment;
         }
-        
+
         [Route("index")]
         public ActionResult GetIndex()
         {

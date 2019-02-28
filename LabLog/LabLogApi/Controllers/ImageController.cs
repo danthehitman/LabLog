@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using LabLogApi.Exceptions;
 using LabLogApi.Model;
 using Marten;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Microsoft.Net.Http.Headers;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LabLogApi.Controllers
 {
@@ -73,7 +72,7 @@ namespace LabLogApi.Controllers
                     throw new NotFoundException();
             }
         }
-        
+
         // POST: api/Image
         [HttpPost]
         [Authorize(Policy = "AuthToken")]
@@ -110,7 +109,7 @@ namespace LabLogApi.Controllers
                     Name = name,
                     FileName = newFileName,
                     Description = description,
-                    Tags = tags[0].Split(',').Select(s=>s.Trim()).ToList(),
+                    Tags = tags[0].Split(',').Select(s => s.Trim()).ToList(),
                     CreatedDate = DateTime.UtcNow,
                     LastEditedDate = DateTime.UtcNow
                 };
@@ -123,7 +122,7 @@ namespace LabLogApi.Controllers
             }
             return newImageIds;
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         [Authorize(Policy = "AuthToken")]
